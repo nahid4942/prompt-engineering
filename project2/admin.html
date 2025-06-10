@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel | Red Backpackers</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-logo">Red Backpackers</div>
+                <ul class="navbar-menu">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="hostels.html" class="active">Hostels</a></li>
+                    <li><a href="trip-planner.html">Trip Plan</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <div class="navbar-toggle" id="navbar-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="admin-panel" style="margin-top:40px;">
+            <h2>Admin Panel: Manage Hostels</h2>
+            <form id="addHostelForm" class="hostel-search-form">
+                <label>
+                    Name:
+                    <input type="text" id="admin-name" required>
+                </label>
+                <label>
+                    Destination:
+                    <input type="text" id="admin-destination" required>
+                </label>
+                <label>
+                    Price (per night):
+                    <input type="number" id="admin-price" min="1" required>
+                </label>
+                <label>
+                    Rooms Available:
+                    <input type="number" id="admin-rooms" min="1" required>
+                </label>
+                <label>
+                    Image URL:
+                    <input type="text" id="admin-image" required>
+                </label>
+                <button type="submit">Add Hostel</button>
+            </form>
+            <div id="admin-hostel-list" style="margin-top:32px;">
+                <h3>Update Hostel Status</h3>
+                <div id="admin-hostel-cards" class="destination-grid"></div>
+            </div>
+        </section>
+    </main>
+    <script src="admin.js"></script>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2025 Red Backpackers. All rights reserved.</p>
+            <p>
+                <a href="index.html#contact">Contact</a> |
+                <a href="hostels.html">Hostels</a> |
+                <a href="index.html#latest-blog">Blog</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trip Planner | Backpackers</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-logo">Backpackers</div>
+                <ul class="navbar-menu">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#latest-blog">Latest Blog</a></li>
+                    <li><a href="index.html#travel-stories">Travel Stories</a></li>
+                    <li><a href="trip-planner.html" class="active">Trip Plan</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="index.html#hostels">Hostels</a></li>
+                </ul>
+                <div class="navbar-toggle" id="navbar-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="trip-plan">
+            <h2>Trip Planner</h2>
+            <p>Choose your next adventure! Click "Add to Trip" to include a destination in your plan.</p>
+            <div class="destination-grid">
+                <div class="destination-card">
+                    <img src="images/paris.jpg" alt="Paris">
+                    <h3>Paris</h3>
+                    <p>The city of lights, romance, and art.</p>
+                    <button class="add-trip-btn">Add to Trip</button>
+                </div>
+                <div class="destination-card">
+                    <img src="images/tokyo.jpg" alt="Tokyo">
+                    <h3>Tokyo</h3>
+                    <p>Experience the vibrant culture and technology.</p>
+                    <button class="add-trip-btn">Add to Trip</button>
+                </div>
+                <div class="destination-card">
+                    <img src="images/rome.jpg" alt="Rome">
+                    <h3>Rome</h3>
+                    <p>Discover ancient history and delicious cuisine.</p>
+                    <button class="add-trip-btn">Add to Trip</button>
+                </div>
+                <div class="destination-card">
+                    <img src="images/sydney.jpg" alt="Sydney">
+                    <h3>Sydney</h3>
+                    <p>Enjoy beaches, opera, and outdoor adventures.</p>
+                    <button class="add-trip-btn">Add to Trip</button>
+                </div>
+                <div class="destination-card">
+                    <img src="images/cape-town.jpg" alt="Cape Town">
+                    <h3>Cape Town</h3>
+                    <p>Mountains, beaches, and vibrant culture await.</p>
+                    <button class="add-trip-btn">Add to Trip</button>
+                </div>
+                <div class="destination-card">
+                    <img src="images/new-york.jpg" alt="New York">
+                    <h3>New York</h3>
+                    <p>The city that never sleeps, full of energy.</p>
+                    <button class="add-trip-btn">Add to Trip</button>
+                </div>
+                <div class="destination-card">
+                    <img src="images/bali.jpg" alt="Bali">
+                    <h3>Bali</h3>
+                    <p>Relax on beautiful beaches and explore temples.</p>
+                    <button class="add-trip-btn">Add to Trip</button>
+                </div>
+                <div class="destination-card">
+                    <img src="images/kyoto.jpg" alt="Kyoto">
+                    <h3>Kyoto</h3>
+                    <p>Experience traditional tea ceremonies and historic sites.</p>
+                    <button class="add-trip-btn">Add to Trip</button>
+                </div>
+                <div class="destination-card">
+                    <img src="images/barcelona.jpg" alt="Barcelona">
+                    <h3>Barcelona</h3>
+                    <p>Marvel at Gaudí's architecture and enjoy tapas.</p>
+                    <button class="add-trip-btn">Add to Trip</button>
+                </div>
+                <div class="destination-card">
+                    <img src="images/amsterdam.jpg" alt="Amsterdam">
+                    <h3>Amsterdam</h3>
+                    <p>Explore the canals, museums, and vibrant nightlife.</p>
+                    <button class="add-trip-btn">Add to Trip</button>
+                </div>
+                <div class="destination-card">
+                    <img src="images/istanbul.jpg" alt="Istanbul">
+                    <h3>Istanbul</h3>
+                    <p>Discover the city where east meets west.</p>
+                    <button class="add-trip-btn">Add to Trip</button>
+                </div>
+                <div class="destination-card">
+                    <img src="images/cairo.jpg" alt="Cairo">
+                    <h3>Cairo</h3>
+                    <p>Visit the ancient pyramids and enjoy local cuisine.</p>
+                    <button class="add-trip-btn">Add to Trip</button>
+                </div>
+
+                <div class="destination-card">
+                    <img src="images/moscow.jpg" alt="Moscow">
+                    <h3>Moscow</h3>
+                    <p>Experience the rich history and vibrant culture.</p>
+                    <button class="add-trip-btn">Add to Trip</button>
+                </div>
+               
+                <div class="destination-card">
+                    <img src="images/ragusa-ibla.jpg" alt="Ragusa Ibla">
+                    <h3>Ragusa Ibla</h3>
+                    <p>Visit the stunning baroque district and enjoy the local cuisine.</p>
+                    <button class="add-trip-btn">Add to Trip</button>
+                 </div>
+
+                 <div class="destination-card">
+                    <img src="images/ragusa-ibla.jpg" alt="Ragusa Ibla">
+                    <h3>Ragusa Ibla</h3>
+                    <p>Visit the stunning baroque district and enjoy the local cuisine.</p>
+                    <button class="add-trip-btn">Add to Trip</button>
+                </div>
+
+                <div class="destination-card">
+                    <img src="images/giardini-naxos.jpg" alt="Giardini Naxos">
+                    <h3>Giardini Naxos</h3>
+                    <p>Relax on the beautiful beaches and explore the ancient ruins.</p>
+                    <button class="add-trip-btn">Add to Trip</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="hostel-search">
+            <h2>Find a Hostel</h2>
+            <form class="hostel-search-form">
+                <label for="destination">Destination:
+                    <input type="text" id="destination" name="destination" placeholder="Enter a city or region">
+                </label>
+                <label for="check-in">Check-in:
+                    <input type="date" id="check-in" name="check-in">
+                </label>
+                <label for="check-out">Check-out:
+                    <input type="date" id="check-out" name="check-out">
+                </label>
+                <label for="guests">Guests:
+                    <input type="number" id="guests" name="guests" min="1" value="1">
+                </label>
+                <button type="submit">Search Hostels</button>
+            </form>
+        </section>
+    </main>
+    <script src="main.js"></script>
+    <footer class="site-footer">
+    <div class="footer-container">
+        <p>&copy; 2025 Red Backpackers. All rights reserved.</p>
+        <p>
+            <a href="index.html#contact">Contact</a> |
+            <a href="index.html#hostels">Hostels</a> |
+            <a href="index.html#latest-blog">Blog</a>
+        </p>
+    </div>
+</footer>
+</body>
+</html>

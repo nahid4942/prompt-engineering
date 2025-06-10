@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostels | Red Backpackers</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-logo">Red Backpackers</div>
+                <ul class="navbar-menu">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#latest-blog">Latest Blog</a></li>
+                    <li><a href="index.html#travel-stories">Travel Stories</a></li>
+                    <li><a href="trip-planner.html">Trip Plan</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="hostels.html" class="active">Hostels</a></li>
+                </ul>
+                <div class="navbar-toggle" id="navbar-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="hostel-search">
+            <h2>Find a Hostel</h2>
+            <form id="searchForm" class="hostel-search-form">
+                <label>
+                    Number of People:
+                    <input type="number" id="people" min="1" value="1" required>
+                </label>
+                <label>
+                    Destination:
+                    <input type="text" id="destination" placeholder="Enter city or place" required>
+                </label>
+                <label>
+                    Budget (per night):
+                    <input type="number" id="budget" min="1" placeholder="e.g. 50" required>
+                </label>
+                <label>
+                    Stay Duration (nights):
+                    <input type="number" id="duration" min="1" value="1" required>
+                </label>
+                <button type="submit">Search</button>
+            </form>
+        </section>
+        <section id="hostel-results">
+            <h2>Available Hostels</h2>
+            <div class="destination-grid" id="hostelCards">
+                <!-- Hostel cards will be injected here -->
+            </div>
+        </section>
+    </main>
+    <script src="hostels.js"></script>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2025 Red Backpackers. All rights reserved.</p>
+            <p>
+                <a href="index.html#contact">Contact</a> |
+                <a href="hostels.html">Hostels</a> |
+                <a href="index.html#latest-blog">Blog</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
