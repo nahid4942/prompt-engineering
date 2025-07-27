@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Printing Service</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-storage-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+    <header>
+        <h1>📄 Online Printing Service</h1>
+        <nav>
+            <ul>
+                <li><a href="#upload">Upload</a></li>
+                <li><a href="#calculate">Price Calculator</a></li>
+                <li><a href="#checkout">Checkout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="upload">
+        <h2>Upload Your Document</h2>
+        <div class="file-upload-area" onclick="document.getElementById('fileInput').click()">
+            <div class="upload-icon">📁</div>
+            <div class="upload-text">Click to upload or drag and drop</div>
+            <div class="upload-hint">PDF, DOC, DOCX, JPG, PNG (Max 50MB)</div>
+        </div>
+        <input type="file" id="fileInput" accept=".pdf,.doc,.docx,.jpg,.png,.jpeg" style="display: none;">
+        
+        <!-- Upload Progress -->
+        <div id="uploadProgress" style="display: none;">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="progress-text" id="progressText">Uploading... 0%</div>
+        </div>
+        
+        <!-- File Preview will be inserted here -->
+    </section>
+
+    <section id="options">
+        <h2>Printing Options</h2>
+        <form id="printOptions">
+            <div class="form-row">
+                <label>Paper Size:
+                    <select id="paperSize">
+                        <option value="A4">A4</option>
+                        <option value="A3">A3</option>
+                        <option value="Letter">Letter</option>
+                    </select>
+                </label>
+                <label>Color:
+                    <select id="color">
+                        <option value="bw">Black & White</option>
+                        <option value="color">Color</option>
+                    </select>
+                </label>
+            </div>
+            <div class="form-row">
+                <label>Print Side:
+                    <select id="side">
+                        <option value="single">Single Side</option>
+                        <option value="double">Double Side</option>
+                    </select>
+                </label>
+                <label>Number of Copies:
+                    <input type="number" id="copies" min="1" value="1">
+                </label>
+            </div>
+        </form>
+    </section>
+
+    <section id="calculate">
+        <h2>Price Calculator</h2>
+        <div id="priceOutput">Please upload a file to calculate price</div>
+    </section>
+
+    <section id="checkout">
+        <h2>Checkout</h2>
+        <form id="checkoutForm">
+            <div class="form-row">
+                <label>Full Name:
+                    <input type="text" id="name" required>
+                </label>
+                <label>Phone Number:
+                    <input type="tel" id="phone" required placeholder="01XXXXXXXXX">
+                </label>
+            </div>
+            <label>Delivery Address:
+                <textarea id="address" required placeholder="Enter your complete address..."></textarea>
+            </label>
+            <label>Payment Method:
+                <select id="payment" required>
+                    <option value="">Select Payment Method</option>
+                    <option value="bkash">bKash</option>
+                    <option value="nagad">Nagad</option>
+                    <option value="rocket">Rocket</option>
+                    <option value="cash">Cash on Delivery</option>
+                </select>
+            </label>
+            <button type="submit" id="submitOrder">Place Order 🛒</button>
+        </form>
+    </section>
+
+    <!-- Messages will be shown here -->
+    <div id="messageContainer"></div>
+
+    <script src="firebase-config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
