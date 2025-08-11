@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Saree Elegance</title>
+    <meta name="description" content="Complete your purchase securely">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/checkout.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="top-bar">
+            <div class="container">
+                <div class="top-left">
+                    <span><i class="fas fa-phone"></i> +880 1XXX-XXXXXX</span>
+                    <span><i class="fas fa-envelope"></i> info@sareeelegance.com</span>
+                </div>
+                <div class="top-right">
+                    <span>Free shipping on orders over ৳5000</span>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <a href="index.html" class="logo">
+                        <h1>Saree Elegance</h1>
+                        <span>Premium Collection</span>
+                    </a>
+                </div>
+                
+                <div class="checkout-steps">
+                    <div class="step completed">
+                        <span class="step-number">1</span>
+                        <span class="step-label">Cart</span>
+                    </div>
+                    <div class="step-line completed"></div>
+                    <div class="step active">
+                        <span class="step-number">2</span>
+                        <span class="step-label">Checkout</span>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step">
+                        <span class="step-number">3</span>
+                        <span class="step-label">Complete</span>
+                    </div>
+                </div>
+                
+                <div class="nav-icons">
+                    <a href="#" class="cart-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="count" id="cart-count">0</span>
+                    </a>
+                    <a href="login.html" class="user-icon"><i class="fas fa-user"></i></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="checkout-main">
+        <div class="container">
+            <div class="checkout-layout">
+                <!-- Checkout Form -->
+                <div class="checkout-form-section">
+                    <form class="checkout-form" id="checkout-form">
+                        <!-- Contact Information -->
+                        <div class="form-section">
+                            <div class="section-header">
+                                <h2><i class="fas fa-user"></i> Contact Information</h2>
+                                <p>Already have an account? <a href="login.html">Sign in</a></p>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="checkbox-option">
+                                    <input type="checkbox" name="newsletter">
+                                    <span class="checkbox-custom"></span>
+                                    Email me with news and offers
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Delivery Information -->
+                        <div class="form-section">
+                            <div class="section-header">
+                                <h2><i class="fas fa-truck"></i> Delivery Information</h2>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="first-name">First Name *</label>
+                                    <input type="text" id="first-name" name="firstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="last-name">Last Name *</label>
+                                    <input type="text" id="last-name" name="lastName" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="company">Company (Optional)</label>
+                                <input type="text" id="company" name="company">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="address">Address *</label>
+                                <input type="text" id="address" name="address" placeholder="Street address" required>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" id="address2" name="address2" placeholder="Apartment, suite, etc. (optional)">
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="city">City *</label>
+                                    <input type="text" id="city" name="city" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="state">State/Division *</label>
+                                    <select id="state" name="state" required>
+                                        <option value="">Select State/Division</option>
+                                        <option value="dhaka">Dhaka</option>
+                                        <option value="chittagong">Chittagong</option>
+                                        <option value="rajshahi">Rajshahi</option>
+                                        <option value="sylhet">Sylhet</option>
+                                        <option value="khulna">Khulna</option>
+                                        <option value="barisal">Barisal</option>
+                                        <option value="rangpur">Rangpur</option>
+                                        <option value="mymensingh">Mymensingh</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="postal-code">Postal Code *</label>
+                                    <input type="text" id="postal-code" name="postalCode" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="checkbox-option">
+                                    <input type="checkbox" name="saveInfo">
+                                    <span class="checkbox-custom"></span>
+                                    Save this information for next time
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Shipping Method -->
+                        <div class="form-section">
+                            <div class="section-header">
+                                <h2><i class="fas fa-shipping-fast"></i> Shipping Method</h2>
+                            </div>
+                            
+                            <div class="shipping-options">
+                                <label class="shipping-option">
+                                    <input type="radio" name="shipping" value="standard" checked>
+                                    <span class="radio-custom"></span>
+                                    <div class="shipping-info">
+                                        <div class="shipping-details">
+                                            <h4>Standard Delivery</h4>
+                                            <p>5-7 business days</p>
+                                        </div>
+                                        <div class="shipping-price">Free</div>
+                                    </div>
+                                </label>
+                                
+                                <label class="shipping-option">
+                                    <input type="radio" name="shipping" value="express">
+                                    <span class="radio-custom"></span>
+                                    <div class="shipping-info">
+                                        <div class="shipping-details">
+                                            <h4>Express Delivery</h4>
+                                            <p>2-3 business days</p>
+                                        </div>
+                                        <div class="shipping-price">৳200</div>
+                                    </div>
+                                </label>
+                                
+                                <label class="shipping-option">
+                                    <input type="radio" name="shipping" value="overnight">
+                                    <span class="radio-custom"></span>
+                                    <div class="shipping-info">
+                                        <div class="shipping-details">
+                                            <h4>Overnight Delivery</h4>
+                                            <p>Next business day</p>
+                                        </div>
+                                        <div class="shipping-price">৳500</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Payment Method -->
+                        <div class="form-section">
+                            <div class="section-header">
+                                <h2><i class="fas fa-credit-card"></i> Payment Method</h2>
+                                <div class="security-badge">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>Secure Payment</span>
+                                </div>
+                            </div>
+                            
+                            <div class="payment-methods">
+                                <!-- Credit/Debit Card -->
+                                <div class="payment-method" data-method="card">
+                                    <label class="payment-option">
+                                        <input type="radio" name="payment" value="card" checked>
+                                        <span class="radio-custom"></span>
+                                        <div class="payment-info">
+                                            <h4>Credit/Debit Card</h4>
+                                            <div class="card-logos">
+                                                <img src="assets/images/visa.png" alt="Visa">
+                                                <img src="assets/images/mastercard.png" alt="Mastercard">
+                                                <img src="assets/images/amex.png" alt="American Express">
+                                            </div>
+                                        </div>
+                                    </label>
+                                    
+                                    <div class="payment-details card-details">
+                                        <div class="form-group">
+                                            <label for="card-number">Card Number *</label>
+                                            <input type="text" id="card-number" name="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19">
+                                        </div>
+                                        
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label for="expiry">Expiry Date *</label>
+                                                <input type="text" id="expiry" name="expiry" placeholder="MM/YY" maxlength="5">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="cvv">CVV *</label>
+                                                <input type="text" id="cvv" name="cvv" placeholder="123" maxlength="4">
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="card-name">Cardholder Name *</label>
+                                            <input type="text" id="card-name" name="cardName" placeholder="Name on card">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- bKash -->
+                                <div class="payment-method" data-method="bkash">
+                                    <label class="payment-option">
+                                        <input type="radio" name="payment" value="bkash">
+                                        <span class="radio-custom"></span>
+                                        <div class="payment-info">
+                                            <h4>bKash</h4>
+                                            <img src="assets/images/bkash-logo.png" alt="bKash" class="payment-logo">
+                                        </div>
+                                    </label>
+                                    
+                                    <div class="payment-details bkash-details" style="display: none;">
+                                        <div class="form-group">
+                                            <label for="bkash-number">bKash Number *</label>
+                                            <input type="tel" id="bkash-number" name="bkashNumber" placeholder="01XXXXXXXXX">
+                                        </div>
+                                        <div class="payment-instructions">
+                                            <p><i class="fas fa-info-circle"></i> You will be redirected to bKash to complete your payment</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Nagad -->
+                                <div class="payment-method" data-method="nagad">
+                                    <label class="payment-option">
+                                        <input type="radio" name="payment" value="nagad">
+                                        <span class="radio-custom"></span>
+                                        <div class="payment-info">
+                                            <h4>Nagad</h4>
+                                            <img src="assets/images/nagad-logo.png" alt="Nagad" class="payment-logo">
+                                        </div>
+                                    </label>
+                                    
+                                    <div class="payment-details nagad-details" style="display: none;">
+                                        <div class="form-group">
+                                            <label for="nagad-number">Nagad Number *</label>
+                                            <input type="tel" id="nagad-number" name="nagadNumber" placeholder="01XXXXXXXXX">
+                                        </div>
+                                        <div class="payment-instructions">
+                                            <p><i class="fas fa-info-circle"></i> You will be redirected to Nagad to complete your payment</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Cash on Delivery -->
+                                <div class="payment-method" data-method="cod">
+                                    <label class="payment-option">
+                                        <input type="radio" name="payment" value="cod">
+                                        <span class="radio-custom"></span>
+                                        <div class="payment-info">
+                                            <h4>Cash on Delivery</h4>
+                                            <p>Pay when you receive your order</p>
+                                        </div>
+                                    </label>
+                                    
+                                    <div class="payment-details cod-details" style="display: none;">
+                                        <div class="payment-instructions">
+                                            <p><i class="fas fa-info-circle"></i> Pay cash when your order is delivered</p>
+                                            <p><i class="fas fa-exclamation-triangle"></i> Additional ৳50 processing fee applies</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Bank Transfer -->
+                                <div class="payment-method" data-method="bank">
+                                    <label class="payment-option">
+                                        <input type="radio" name="payment" value="bank">
+                                        <span class="radio-custom"></span>
+                                        <div class="payment-info">
+                                            <h4>Bank Transfer</h4>
+                                            <p>Direct bank transfer</p>
+                                        </div>
+                                    </label>
+                                    
+                                    <div class="payment-details bank-details" style="display: none;">
+                                        <div class="bank-info">
+                                            <h5>Bank Details:</h5>
+                                            <p><strong>Bank:</strong> Dutch Bangla Bank Limited</p>
+                                            <p><strong>Account Name:</strong> Saree Elegance Ltd.</p>
+                                            <p><strong>Account Number:</strong> 1234567890</p>
+                                            <p><strong>Routing Number:</strong> 090260724</p>
+                                        </div>
+                                        <div class="payment-instructions">
+                                            <p><i class="fas fa-info-circle"></i> Please use your order number as payment reference</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Billing Address -->
+                        <div class="form-section">
+                            <div class="section-header">
+                                <h2><i class="fas fa-file-invoice"></i> Billing Address</h2>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="checkbox-option">
+                                    <input type="checkbox" name="sameAsShipping" checked>
+                                    <span class="checkbox-custom"></span>
+                                    Same as shipping address
+                                </label>
+                            </div>
+                            
+                            <div class="billing-address-fields" style="display: none;">
+                                <!-- Billing address fields would go here -->
+                            </div>
+                        </div>
+
+                        <!-- Order Notes -->
+                        <div class="form-section">
+                            <div class="section-header">
+                                <h2><i class="fas fa-sticky-note"></i> Order Notes (Optional)</h2>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="order-notes">Special instructions for delivery</label>
+                                <textarea id="order-notes" name="orderNotes" rows="3" 
+                                         placeholder="Any special requests or delivery instructions..."></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Place Order Button -->
+                        <div class="form-section">
+                            <button type="submit" class="btn btn-primary place-order-btn">
+                                <i class="fas fa-lock"></i>
+                                Complete Order
+                            </button>
+                            <p class="order-disclaimer">
+                                By placing your order, you agree to our 
+                                <a href="terms.html">Terms of Service</a> and 
+                                <a href="privacy.html">Privacy Policy</a>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="order-summary">
+                    <div class="summary-card">
+                        <h2>Order Summary</h2>
+                        
+                        <div class="order-items" id="order-items">
+                            <!-- Order items will be populated by JavaScript -->
+                        </div>
+                        
+                        <div class="promo-code">
+                            <input type="text" placeholder="Discount code" id="promo-input">
+                            <button type="button" class="btn btn-outline" id="apply-promo">Apply</button>
+                        </div>
+                        
+                        <div class="order-totals">
+                            <div class="total-row">
+                                <span>Subtotal</span>
+                                <span id="subtotal">৳0</span>
+                            </div>
+                            <div class="total-row">
+                                <span>Shipping</span>
+                                <span id="shipping-cost">Free</span>
+                            </div>
+                            <div class="total-row discount-row" style="display: none;">
+                                <span>Discount</span>
+                                <span id="discount-amount">-৳0</span>
+                            </div>
+                            <div class="total-row tax-row">
+                                <span>Tax</span>
+                                <span id="tax-amount">৳0</span>
+                            </div>
+                            <div class="total-row final-total">
+                                <span>Total</span>
+                                <span id="final-total">৳0</span>
+                            </div>
+                        </div>
+                        
+                        <div class="payment-security">
+                            <div class="security-badges">
+                                <img src="assets/images/ssl-secure.png" alt="SSL Secure">
+                                <img src="assets/images/payment-secure.png" alt="Secure Payment">
+                            </div>
+                            <p>Your payment information is encrypted and secure</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Trust Signals -->
+                    <div class="trust-signals">
+                        <div class="trust-item">
+                            <i class="fas fa-shipping-fast"></i>
+                            <div>
+                                <h4>Free Shipping</h4>
+                                <p>On orders over ৳5000</p>
+                            </div>
+                        </div>
+                        <div class="trust-item">
+                            <i class="fas fa-undo-alt"></i>
+                            <div>
+                                <h4>Easy Returns</h4>
+                                <p>30-day return policy</p>
+                            </div>
+                        </div>
+                        <div class="trust-item">
+                            <i class="fas fa-headset"></i>
+                            <div>
+                                <h4>24/7 Support</h4>
+                                <p>Customer service available</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Saree Elegance</h3>
+                    <p>Premium sarees crafted with tradition and elegance.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Customer Care</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="shipping.html">Shipping Info</a></li>
+                        <li><a href="returns.html">Returns</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="cookies.html">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +880 1XXX-XXXXXX</p>
+                        <p><i class="fas fa-envelope"></i> info@sareeelegance.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/checkout.js"></script>
+</body>
+</html>

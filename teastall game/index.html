@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tea Time Tycoon — Enhanced Edition</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>🍵 Tea Time Tycoon — Enhanced Edition</h1>
+      <div class="status">
+        <div class="badge">Money: <span id="money">$10.00</span></div>
+        <div class="badge">Level: <span id="level">1</span></div>
+        <div class="badge">Served: <span id="served">0</span></div>
+        <div class="badge">Streak: <span id="streak">0</span></div>
+        <div class="badge">Rep: <span id="reputation">⭐⭐⭐</span></div>
+      </div>
+      <button id="soundToggle" class="sound-toggle">🔊</button>
+    </header>
+
+    <!-- Achievement notification -->
+    <div class="achievement">
+      <div class="title">Achievement Unlocked!</div>
+      <div class="desc">Your first achievement</div>
+    </div>
+
+    <!-- Daily Challenge Banner -->
+    <div class="daily-challenge panel">
+      <div class="challenge-header">
+        <h3>🎯 Daily Challenge</h3>
+        <div class="challenge-timer">23:45:12</div>
+      </div>
+      <div class="challenge-content">
+        <p id="challenge-desc">Serve 50 customers with perfect recipes</p>
+        <div class="challenge-progress">
+          <div class="progress-fill" style="width: 30%"></div>
+          <span class="progress-text">15/50</span>
+        </div>
+        <div class="challenge-reward">Reward: $100 + Special Ingredient</div>
+      </div>
+    </div>
+
+    <!-- Weather System -->
+    <div class="weather-panel">
+      <div class="weather-icon" id="weather-icon">☀️</div>
+      <div class="weather-info">
+        <div class="weather-type" id="weather-type">Sunny</div>
+        <div class="weather-effect" id="weather-effect">+20% customer happiness</div>
+      </div>
+    </div>
+
+    <div class="stall panel">
+      <h3>🏪 Your Tea Stall</h3>
+      
+      <div class="customers" id="customers"></div>
+      
+      <div class="controls">
+        <div style="flex: 1;">
+          <div style="font-weight: 800; margin-bottom: 12px; color: var(--wood); font-size: 16px; text-align: center;">🧪 Ingredients</div>
+          <div class="ingredients">
+            <button class="ing-btn" data-ing="tea">
+              🍃<br>Tea<br><span style="font-size:10px">(1)</span>
+              <div class="ing-count" style="display:none">0</div>
+            </button>
+            <button class="ing-btn" data-ing="lemon">
+              🍋<br>Lemon<br><span style="font-size:10px">(2)</span>
+              <div class="ing-count" style="display:none">0</div>
+            </button>
+            <button class="ing-btn" data-ing="honey">
+              🍯<br>Honey<br><span style="font-size:10px">(3)</span>
+              <div class="ing-count" style="display:none">0</div>
+            </button>
+            <button class="ing-btn" data-ing="mint">
+              🌿<br>Mint<br><span style="font-size:10px">(4)</span>
+              <div class="ing-count" style="display:none">0</div>
+            </button>
+            <button class="ing-btn" data-ing="spices">
+              🌶️<br>Spices<br><span style="font-size:10px">(5)</span>
+              <div class="ing-count" style="display:none">0</div>
+            </button>
+            <button class="ing-btn" data-ing="milk">
+              🥛<br>Milk<br><span style="font-size:10px">(6)</span>
+              <div class="ing-count" style="display:none">0</div>
+            </button>
+            <button class="ing-btn special" data-ing="cardamom" style="display:none">
+              🌰<br>Cardamom<br><span style="font-size:10px">(7)</span>
+              <div class="ing-count" style="display:none">0</div>
+            </button>
+            <button class="ing-btn special" data-ing="rose" style="display:none">
+              🌹<br>Rose<br><span style="font-size:10px">(8)</span>
+              <div class="ing-count" style="display:none">0</div>
+            </button>
+          </div>
+        </div>
+        
+        <!-- Enhanced Quick Actions -->
+        <div class="quick-actions">
+          <div style="font-weight: 800; margin-bottom: 8px; color: var(--wood); font-size: 14px; text-align: center;">⚡ Quick Actions</div>
+          <button class="quick-action btn-small" id="clear-recipe" title="Clear current recipe">
+            🗑️ Clear
+          </button>
+          <button class="quick-action btn-small btn-success" id="auto-serve" title="Auto-serve matching customers">
+            🤖 Auto
+          </button>
+          <button class="quick-action btn-small btn-primary" id="recipe-book" title="View recipe book">
+            📖 Recipes
+          </button>
+        </div>
+        </div>
+        
+        <div style="width: 220px;">
+          <div style="font-weight: 800; margin-bottom: 8px; color: var(--wood); font-size: 14px; text-align: center;">🫖 Tea Kettle</div>
+          <div class="kettle" id="kettle">
+            <div style="font-size: 13px; color: #666; margin-bottom: 4px;">🫖 Kettle</div>
+            <div class="contents" id="kettleContents">Empty kettle</div>
+            <div style="margin-top: 8px; display: flex; gap: 8px;">
+              <button class="ing-btn small" id="boil" style="flex: 1;">
+                🔥 Boil<br><span style="font-size:10px">(B)</span>
+              </button>
+              <button class="serve ripple" id="serve" disabled>
+                ☕ Serve<br><span style="font-size:10px">(S)</span>
+              </button>
+            </div>
+            <div class="progress-bar" style="width: 0%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="game-area">
+      <div class="board panel">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <h3 style="margin: 0; color: var(--wood);">📋 Game Log</h3>
+          <div class="game-controls">
+            <button class="control-btn" id="pauseBtn">Pause (Space)</button>
+            <button class="control-btn" onclick="window.location.reload()">🔄 Reset</button>
+          </div>
+        </div>
+        
+        <div class="log" id="log"></div>
+        
+        <div class="upgrades">
+          <div class="upgrade" data-upgrade="faster">
+            <h4>⚡ Faster Brewing (0/5)</h4>
+            <p>Reduces brewing time by 20% per level</p>
+            <div style="font-size: 12px; color: #666; margin: 4px 0;">
+              Current: 3.0s → Next: 2.4s
+            </div>
+            <button>$15</button>
+          </div>
+          
+          <div class="upgrade" data-upgrade="capacity">
+            <h4>🏠 Bigger Kettle (0/3)</h4>
+            <p>Allows serving more customers at once</p>
+            <div style="font-size: 12px; color: #666; margin: 4px 0;">
+              Current: 8 max → Next: 10 max
+            </div>
+            <button>$25</button>
+          </div>
+          
+          <div class="upgrade" data-upgrade="efficiency">
+            <h4>💰 Better Ingredients (0/5)</h4>
+            <p>Increases profit per tea by 20%</p>
+            <div style="font-size: 12px; color: #666; margin: 4px 0;">
+              Current: 100% → Next: 120%
+            </div>
+            <button>$20</button>
+          </div>
+          
+          <div class="upgrade" data-upgrade="attraction">
+            <h4>📢 Marketing (0/4)</h4>
+            <p>Attracts customers 15% faster</p>
+            <div style="font-size: 12px; color: #666; margin: 4px 0;">
+              Current: 4.0s → Next: 3.4s
+            </div>
+            <button>$30</button>
+          </div>
+          
+          <div class="upgrade premium-upgrade" data-upgrade="automation">
+            <h4>🤖 Automation (0/3)</h4>
+            <p>Automatically serves perfect matches</p>
+            <div style="font-size: 12px; color: #666; margin: 4px 0;">
+              Current: Manual → Next: 25% Auto
+            </div>
+            <button>$75</button>
+          </div>
+          
+          <div class="upgrade premium-upgrade" data-upgrade="quality">
+            <h4>⭐ Quality Control (0/5)</h4>
+            <p>Improves reputation and tips</p>
+            <div style="font-size: 12px; color: #666; margin: 4px 0;">
+              Current: 100% → Next: 110%
+            </div>
+            <button>$50</button>
+          </div>
+        </div>
+        
+        <!-- Recipe Book Modal -->
+        <div class="modal" id="recipe-modal" style="display: none;">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3>📖 Recipe Book</h3>
+              <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+              <div class="recipe-grid" id="recipe-grid">
+                <!-- Recipes will be populated here -->
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- VIP Customer Alert -->
+        <div class="vip-alert" id="vip-alert" style="display: none;">
+          <div class="vip-content">
+            <div class="vip-icon">👑</div>
+            <div class="vip-text">
+              <h4>VIP Customer Incoming!</h4>
+              <p>Serve perfectly for bonus rewards!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="stats-panel panel">
+        <h3 style="margin: 0 0 12px 0; color: var(--wood); text-align: center;">📊 Statistics</h3>
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span class="stat-value" id="total-earned">0.00</span>
+            <span class="stat-label">Total Earned</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value" id="customers-served">0</span>
+            <span class="stat-label">Customers Served</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value" id="current-streak">0</span>
+            <span class="stat-label">Current Streak</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value" id="best-streak">0</span>
+            <span class="stat-label">Best Streak</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value" id="happy-customers">0</span>
+            <span class="stat-label">Happy Customers</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value" id="game-time">0</span>
+            <span class="stat-label">Game Time (s)</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value" id="perfect-serves">0</span>
+            <span class="stat-label">Perfect Serves</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value" id="reputation-level">3</span>
+            <span class="stat-label">Reputation</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value" id="daily-progress">0%</span>
+            <span class="stat-label">Daily Goal</span>
+          </div>
+        </div>
+        
+        <!-- Advanced Analytics -->
+        <div class="analytics-panel">
+          <h4>📈 Performance Analytics</h4>
+          <div class="analytics-grid">
+            <div class="metric">
+              <span class="metric-label">Efficiency Rate</span>
+              <span class="metric-value" id="efficiency">85%</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Customer Rating</span>
+              <span class="metric-value" id="rating">4.2⭐</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Peak Hours</span>
+              <span class="metric-value" id="peak-time">2-4 PM</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Bestseller</span>
+              <span class="metric-value" id="bestseller">Chai Tea</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      🍵 Tea Time Tycoon Enhanced Edition — Complete with animations, sound effects, achievements, and advanced upgrades! 
+      <br><small>Press M to toggle sound | Space to pause | 1-6 for ingredients | B to boil | S to serve</small>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

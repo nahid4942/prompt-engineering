@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saree Collection - Saree Elegance</title>
+    <meta name="description" content="Browse our complete collection of premium sarees">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/products.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+</head>
+<body>
+    <!-- Header (Same as index.html) -->
+    <header class="header">
+        <div class="top-bar">
+            <div class="container">
+                <div class="top-left">
+                    <span><i class="fas fa-phone"></i> +880 1XXX-XXXXXX</span>
+                    <span><i class="fas fa-envelope"></i> info@sareeelegance.com</span>
+                </div>
+                <div class="top-right">
+                    <span>Free shipping on orders over ৳5000</span>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <a href="index.html" class="logo">
+                        <h1>Saree Elegance</h1>
+                        <span>Premium Collection</span>
+                    </a>
+                </div>
+                
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="dropdown">
+                        <a href="products.html" class="nav-link active">Collections <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="products.html?category=wedding">Wedding Sarees</a>
+                            <a href="products.html?category=festive">Festive Collection</a>
+                            <a href="products.html?category=casual">Casual Wear</a>
+                            <a href="products.html?category=designer">Designer Sarees</a>
+                            <a href="products.html?category=limited">Limited Edition</a>
+                        </div>
+                    </li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li><a href="appointment.html" class="nav-link">Book Consultation</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                
+                <div class="nav-icons">
+                    <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
+                    <a href="#" class="wishlist-icon">
+                        <i class="fas fa-heart"></i>
+                        <span class="count" id="wishlist-count">0</span>
+                    </a>
+                    <a href="#" class="cart-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="count" id="cart-count">0</span>
+                    </a>
+                    <a href="login.html" class="user-icon"><i class="fas fa-user"></i></a>
+                </div>
+                
+                <div class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="search-overlay">
+        <div class="search-container">
+            <input type="text" placeholder="Search for sarees..." id="search-input">
+            <button class="search-btn"><i class="fas fa-search"></i></button>
+            <button class="close-search"><i class="fas fa-times"></i></button>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-cart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be dynamically added here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total: ৳<span id="cart-total">0</span></span>
+            </div>
+            <div class="cart-actions">
+                <a href="cart.html" class="btn btn-outline">View Cart</a>
+                <a href="checkout.html" class="btn btn-primary">Checkout</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span>Collections</span>
+            </div>
+            <h1 class="page-title">Saree Collection</h1>
+            <p class="page-subtitle">Discover timeless elegance in every thread</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="products-main">
+        <div class="container">
+            <div class="products-layout">
+                <!-- Sidebar Filters -->
+                <aside class="products-sidebar">
+                    <div class="filter-section">
+                        <h3 class="filter-title">Filter Products</h3>
+                        
+                        <!-- Category Filter -->
+                        <div class="filter-group">
+                            <h4>Category</h4>
+                            <div class="filter-options">
+                                <label class="filter-option">
+                                    <input type="checkbox" name="category" value="wedding">
+                                    <span class="checkmark"></span>
+                                    Wedding Sarees
+                                    <span class="count">(45)</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" name="category" value="festive">
+                                    <span class="checkmark"></span>
+                                    Festive Collection
+                                    <span class="count">(32)</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" name="category" value="casual">
+                                    <span class="checkmark"></span>
+                                    Casual Wear
+                                    <span class="count">(28)</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" name="category" value="designer">
+                                    <span class="checkmark"></span>
+                                    Designer Sarees
+                                    <span class="count">(18)</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" name="category" value="limited">
+                                    <span class="checkmark"></span>
+                                    Limited Edition
+                                    <span class="count">(8)</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Price Filter -->
+                        <div class="filter-group">
+                            <h4>Price Range</h4>
+                            <div class="price-slider">
+                                <input type="range" id="price-min" min="1000" max="50000" value="1000" class="slider">
+                                <input type="range" id="price-max" min="1000" max="50000" value="50000" class="slider">
+                                <div class="price-values">
+                                    <span>৳<span id="price-min-value">1000</span></span>
+                                    <span>৳<span id="price-max-value">50000</span></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Fabric Filter -->
+                        <div class="filter-group">
+                            <h4>Fabric</h4>
+                            <div class="filter-options">
+                                <label class="filter-option">
+                                    <input type="checkbox" name="fabric" value="silk">
+                                    <span class="checkmark"></span>
+                                    Silk
+                                    <span class="count">(67)</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" name="fabric" value="cotton">
+                                    <span class="checkmark"></span>
+                                    Cotton
+                                    <span class="count">(43)</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" name="fabric" value="chiffon">
+                                    <span class="checkmark"></span>
+                                    Chiffon
+                                    <span class="count">(25)</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="checkbox" name="fabric" value="georgette">
+                                    <span class="checkmark"></span>
+                                    Georgette
+                                    <span class="count">(31)</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Color Filter -->
+                        <div class="filter-group">
+                            <h4>Color</h4>
+                            <div class="color-options">
+                                <label class="color-option" data-color="red">
+                                    <input type="checkbox" name="color" value="red">
+                                    <span class="color-swatch" style="background: #E74C3C;"></span>
+                                </label>
+                                <label class="color-option" data-color="blue">
+                                    <input type="checkbox" name="color" value="blue">
+                                    <span class="color-swatch" style="background: #3498DB;"></span>
+                                </label>
+                                <label class="color-option" data-color="green">
+                                    <input type="checkbox" name="color" value="green">
+                                    <span class="color-swatch" style="background: #27AE60;"></span>
+                                </label>
+                                <label class="color-option" data-color="yellow">
+                                    <input type="checkbox" name="color" value="yellow">
+                                    <span class="color-swatch" style="background: #F1C40F;"></span>
+                                </label>
+                                <label class="color-option" data-color="pink">
+                                    <input type="checkbox" name="color" value="pink">
+                                    <span class="color-swatch" style="background: #E91E63;"></span>
+                                </label>
+                                <label class="color-option" data-color="purple">
+                                    <input type="checkbox" name="color" value="purple">
+                                    <span class="color-swatch" style="background: #9B59B6;"></span>
+                                </label>
+                                <label class="color-option" data-color="orange">
+                                    <input type="checkbox" name="color" value="orange">
+                                    <span class="color-swatch" style="background: #E67E22;"></span>
+                                </label>
+                                <label class="color-option" data-color="black">
+                                    <input type="checkbox" name="color" value="black">
+                                    <span class="color-swatch" style="background: #2C3E50;"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Clear Filters -->
+                        <button class="clear-filters btn btn-outline">Clear All Filters</button>
+                    </div>
+
+                    <!-- Virtual Draping Tool -->
+                    <div class="virtual-draping-widget">
+                        <h3><i class="fas fa-magic"></i> Virtual Draping Tool</h3>
+                        <p>See how any saree looks on you!</p>
+                        <button class="btn btn-primary" id="open-virtual-draping">Try Virtual Draping</button>
+                    </div>
+                </aside>
+
+                <!-- Products Content -->
+                <div class="products-content">
+                    <!-- Toolbar -->
+                    <div class="products-toolbar">
+                        <div class="toolbar-left">
+                            <span class="results-count">Showing <span id="results-count">24</span> of <span id="total-count">131</span> results</span>
+                        </div>
+                        <div class="toolbar-right">
+                            <div class="view-toggle">
+                                <button class="view-btn active" data-view="grid"><i class="fas fa-th"></i></button>
+                                <button class="view-btn" data-view="list"><i class="fas fa-list"></i></button>
+                            </div>
+                            <select class="sort-select" id="sort-products">
+                                <option value="default">Default Sorting</option>
+                                <option value="popularity">Sort by Popularity</option>
+                                <option value="rating">Sort by Rating</option>
+                                <option value="date">Sort by Newness</option>
+                                <option value="price-low">Sort by Price: Low to High</option>
+                                <option value="price-high">Sort by Price: High to Low</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Products Grid -->
+                    <div class="products-grid" id="products-grid">
+                        <!-- Products will be dynamically loaded here -->
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <button class="page-btn prev" disabled><i class="fas fa-chevron-left"></i></button>
+                        <button class="page-btn active" data-page="1">1</button>
+                        <button class="page-btn" data-page="2">2</button>
+                        <button class="page-btn" data-page="3">3</button>
+                        <span class="dots">...</span>
+                        <button class="page-btn" data-page="6">6</button>
+                        <button class="page-btn next"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Virtual Draping Tool Modal -->
+    <div class="virtual-draping-modal" id="virtual-draping-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-magic"></i> Virtual Saree Draping Tool</h2>
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="draping-interface">
+                    <div class="model-section">
+                        <div class="model-viewer" id="model-viewer">
+                            <img src="assets/images/model-default.jpg" alt="Model" id="model-image">
+                            <div class="model-controls">
+                                <button class="model-btn" data-model="model1">Model 1</button>
+                                <button class="model-btn" data-model="model2">Model 2</button>
+                                <button class="model-btn" data-model="model3">Model 3</button>
+                            </div>
+                        </div>
+                        <div class="upload-section">
+                            <h4>Upload Your Photo</h4>
+                            <div class="upload-area" id="upload-area">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <p>Click to upload or drag and drop</p>
+                                <input type="file" id="photo-upload" accept="image/*">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="saree-selection">
+                        <h4>Select Saree to Try</h4>
+                        <div class="saree-options" id="saree-options">
+                            <!-- Saree thumbnails will be loaded here -->
+                        </div>
+                        <div class="draping-controls">
+                            <label>Draping Style:</label>
+                            <select id="draping-style">
+                                <option value="nivi">Nivi Style</option>
+                                <option value="bengali">Bengali Style</option>
+                                <option value="gujarati">Gujarati Style</option>
+                                <option value="maharashtrian">Maharashtrian Style</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="draping-actions">
+                    <button class="btn btn-outline" id="save-look">Save Look</button>
+                    <button class="btn btn-gold" id="share-look">Share Look</button>
+                    <button class="btn btn-primary" id="book-consultation">Book Consultation</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick View Modal -->
+    <div class="quick-view-modal" id="quick-view-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Quick View</h2>
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="quick-view-content">
+                    <div class="product-images">
+                        <div class="main-image">
+                            <img src="" alt="" id="quick-view-main-image">
+                        </div>
+                        <div class="thumbnail-images" id="quick-view-thumbnails">
+                            <!-- Thumbnail images -->
+                        </div>
+                    </div>
+                    <div class="product-details">
+                        <h3 id="quick-view-title"></h3>
+                        <div class="rating" id="quick-view-rating"></div>
+                        <div class="price" id="quick-view-price"></div>
+                        <div class="description" id="quick-view-description"></div>
+                        <div class="size-guide">
+                            <label>Size Guide:</label>
+                            <a href="size-guide.html" target="_blank">View Size Chart</a>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="btn btn-outline wishlist-btn">
+                                <i class="far fa-heart"></i> Add to Wishlist
+                            </button>
+                            <button class="btn btn-primary add-to-cart">
+                                <i class="fas fa-shopping-cart"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Saree Elegance</h3>
+                    <p>Premium sarees crafted with tradition and elegance. Your trusted partner for special occasions and everyday beauty.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="products.html">Collections</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="appointment.html">Book Consultation</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Customer Care</h4>
+                    <ul>
+                        <li><a href="size-guide.html">Size Guide</a></li>
+                        <li><a href="care-instructions.html">Care Instructions</a></li>
+                        <li><a href="returns.html">Returns & Exchange</a></li>
+                        <li><a href="shipping.html">Shipping Info</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Fashion Street, Dhaka, Bangladesh</p>
+                        <p><i class="fas fa-phone"></i> +880 1XXX-XXXXXX</p>
+                        <p><i class="fas fa-envelope"></i> info@sareeelegance.com</p>
+                        <p><i class="fas fa-clock"></i> Mon-Sat: 10AM-8PM</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 Saree Elegance. All rights reserved.</p>
+                    <div class="payment-methods">
+                        <img src="assets/images/payment-visa.png" alt="Visa">
+                        <img src="assets/images/payment-mastercard.png" alt="Mastercard">
+                        <img src="assets/images/payment-bkash.png" alt="bKash">
+                        <img src="assets/images/payment-nagad.png" alt="Nagad">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/products.js"></script>
+</body>
+</html>

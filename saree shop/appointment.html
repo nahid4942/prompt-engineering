@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Consultation - Saree Elegance</title>
+    <meta name="description" content="Book a personal consultation with our saree experts">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/appointment.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="top-bar">
+            <div class="container">
+                <div class="top-left">
+                    <span><i class="fas fa-phone"></i> +880 1XXX-XXXXXX</span>
+                    <span><i class="fas fa-envelope"></i> info@sareeelegance.com</span>
+                </div>
+                <div class="top-right">
+                    <span>Free shipping on orders over ৳5000</span>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <a href="index.html" class="logo">
+                        <h1>Saree Elegance</h1>
+                        <span>Premium Collection</span>
+                    </a>
+                </div>
+                
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="dropdown">
+                        <a href="products.html" class="nav-link">Collections <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="products.html?category=wedding">Wedding Sarees</a>
+                            <a href="products.html?category=festive">Festive Collection</a>
+                            <a href="products.html?category=casual">Casual Wear</a>
+                            <a href="products.html?category=designer">Designer Sarees</a>
+                            <a href="products.html?category=limited">Limited Edition</a>
+                        </div>
+                    </li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li><a href="appointment.html" class="nav-link active">Book Consultation</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                
+                <div class="nav-icons">
+                    <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
+                    <a href="#" class="wishlist-icon">
+                        <i class="fas fa-heart"></i>
+                        <span class="count" id="wishlist-count">0</span>
+                    </a>
+                    <a href="#" class="cart-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="count" id="cart-count">0</span>
+                    </a>
+                    <a href="login.html" class="user-icon"><i class="fas fa-user"></i></a>
+                </div>
+                
+                <div class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span>Book Consultation</span>
+            </div>
+            <h1 class="page-title">Personal Consultation</h1>
+            <p class="page-subtitle">Get expert advice for your perfect saree</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="appointment-main">
+        <div class="container">
+            <!-- Services Overview -->
+            <section class="services-overview">
+                <div class="section-header">
+                    <h2 class="section-title">Our Consultation Services</h2>
+                    <p class="section-subtitle">Choose the service that best fits your needs</p>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card" data-service="style-consultation">
+                        <div class="service-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3>Style Consultation</h3>
+                        <p>Personal styling session to find the perfect saree for your body type and occasion</p>
+                        <div class="service-details">
+                            <span class="duration"><i class="fas fa-clock"></i> 60 minutes</span>
+                            <span class="price">Free</span>
+                        </div>
+                        <button class="btn btn-outline select-service">Select Service</button>
+                    </div>
+                    
+                    <div class="service-card" data-service="virtual-draping">
+                        <div class="service-icon">
+                            <i class="fas fa-magic"></i>
+                        </div>
+                        <h3>Virtual Draping Session</h3>
+                        <p>Try multiple sarees virtually with our expert guidance</p>
+                        <div class="service-details">
+                            <span class="duration"><i class="fas fa-clock"></i> 45 minutes</span>
+                            <span class="price">৳500</span>
+                        </div>
+                        <button class="btn btn-outline select-service">Select Service</button>
+                    </div>
+                    
+                    <div class="service-card" data-service="bridal-consultation">
+                        <div class="service-icon">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <h3>Bridal Consultation</h3>
+                        <p>Complete bridal wardrobe planning with exclusive collection preview</p>
+                        <div class="service-details">
+                            <span class="duration"><i class="fas fa-clock"></i> 90 minutes</span>
+                            <span class="price">৳1000</span>
+                        </div>
+                        <button class="btn btn-outline select-service">Select Service</button>
+                    </div>
+                    
+                    <div class="service-card" data-service="custom-design">
+                        <div class="service-icon">
+                            <i class="fas fa-pencil-ruler"></i>
+                        </div>
+                        <h3>Custom Design</h3>
+                        <p>Work with our designers to create your unique saree</p>
+                        <div class="service-details">
+                            <span class="duration"><i class="fas fa-clock"></i> 2 hours</span>
+                            <span class="price">৳2000</span>
+                        </div>
+                        <button class="btn btn-outline select-service">Select Service</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Appointment Booking Form -->
+            <section class="appointment-booking">
+                <div class="booking-container">
+                    <div class="booking-form-section">
+                        <h2>Book Your Appointment</h2>
+                        <p>Fill in your details and we'll confirm your appointment within 24 hours</p>
+                        
+                        <form class="appointment-form" id="appointment-form">
+                            <!-- Service Selection -->
+                            <div class="form-group">
+                                <label for="service-type">Service Type *</label>
+                                <select id="service-type" name="service" required>
+                                    <option value="">Select a service</option>
+                                    <option value="style-consultation">Style Consultation (Free - 60 min)</option>
+                                    <option value="virtual-draping">Virtual Draping Session (৳500 - 45 min)</option>
+                                    <option value="bridal-consultation">Bridal Consultation (৳1000 - 90 min)</option>
+                                    <option value="custom-design">Custom Design (৳2000 - 2 hours)</option>
+                                </select>
+                            </div>
+
+                            <!-- Personal Information -->
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="first-name">First Name *</label>
+                                    <input type="text" id="first-name" name="firstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="last-name">Last Name *</label>
+                                    <input type="text" id="last-name" name="lastName" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email Address *</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number *</label>
+                                    <input type="tel" id="phone" name="phone" required>
+                                </div>
+                            </div>
+
+                            <!-- Date and Time Selection -->
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="appointment-date">Preferred Date *</label>
+                                    <input type="date" id="appointment-date" name="date" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="appointment-time">Preferred Time *</label>
+                                    <select id="appointment-time" name="time" required>
+                                        <option value="">Select time</option>
+                                        <option value="10:00">10:00 AM</option>
+                                        <option value="11:00">11:00 AM</option>
+                                        <option value="12:00">12:00 PM</option>
+                                        <option value="14:00">2:00 PM</option>
+                                        <option value="15:00">3:00 PM</option>
+                                        <option value="16:00">4:00 PM</option>
+                                        <option value="17:00">5:00 PM</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Consultation Type -->
+                            <div class="form-group">
+                                <label>Consultation Method *</label>
+                                <div class="radio-group">
+                                    <label class="radio-option">
+                                        <input type="radio" name="method" value="in-store" checked>
+                                        <span class="radio-custom"></span>
+                                        In-Store Visit
+                                        <small>Visit our showroom in Dhaka</small>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="method" value="virtual">
+                                        <span class="radio-custom"></span>
+                                        Virtual Meeting
+                                        <small>Online consultation via video call</small>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="method" value="home-visit">
+                                        <span class="radio-custom"></span>
+                                        Home Visit
+                                        <small>Our expert visits your location (Additional ৳1000)</small>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Occasion Details -->
+                            <div class="form-group">
+                                <label for="occasion">Occasion/Event Type</label>
+                                <select id="occasion" name="occasion">
+                                    <option value="">Select occasion</option>
+                                    <option value="wedding">Wedding (Bride)</option>
+                                    <option value="wedding-guest">Wedding (Guest)</option>
+                                    <option value="festival">Festival/Religious</option>
+                                    <option value="party">Party/Social Event</option>
+                                    <option value="office">Office/Formal</option>
+                                    <option value="casual">Casual/Daily Wear</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <!-- Budget Range -->
+                            <div class="form-group">
+                                <label for="budget">Budget Range</label>
+                                <select id="budget" name="budget">
+                                    <option value="">Select budget range</option>
+                                    <option value="under-5000">Under ৳5,000</option>
+                                    <option value="5000-10000">৳5,000 - ৳10,000</option>
+                                    <option value="10000-20000">৳10,000 - ৳20,000</option>
+                                    <option value="20000-50000">৳20,000 - ৳50,000</option>
+                                    <option value="above-50000">Above ৳50,000</option>
+                                </select>
+                            </div>
+
+                            <!-- Special Requirements -->
+                            <div class="form-group">
+                                <label for="requirements">Special Requirements/Notes</label>
+                                <textarea id="requirements" name="requirements" rows="4" 
+                                         placeholder="Any specific requirements, preferences, or questions you'd like to discuss..."></textarea>
+                            </div>
+
+                            <!-- Terms and Conditions -->
+                            <div class="form-group">
+                                <label class="checkbox-option">
+                                    <input type="checkbox" name="terms" required>
+                                    <span class="checkbox-custom"></span>
+                                    I agree to the <a href="terms.html" target="_blank">Terms & Conditions</a> and <a href="privacy.html" target="_blank">Privacy Policy</a>
+                                </label>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="checkbox-option">
+                                    <input type="checkbox" name="newsletter">
+                                    <span class="checkbox-custom"></span>
+                                    Subscribe to our newsletter for style tips and exclusive offers
+                                </label>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button type="submit" class="btn btn-primary submit-btn">
+                                <i class="fas fa-calendar-check"></i>
+                                Book Appointment
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Sidebar Information -->
+                    <div class="booking-sidebar">
+                        <div class="consultation-info">
+                            <h3>What to Expect</h3>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Personal style assessment</li>
+                                <li><i class="fas fa-check"></i> Color and fabric recommendations</li>
+                                <li><i class="fas fa-check"></i> Occasion-appropriate styling</li>
+                                <li><i class="fas fa-check"></i> Exclusive collection preview</li>
+                                <li><i class="fas fa-check"></i> Professional draping techniques</li>
+                                <li><i class="fas fa-check"></i> Care and maintenance tips</li>
+                            </ul>
+                        </div>
+
+                        <div class="contact-card">
+                            <h3>Need Help?</h3>
+                            <div class="contact-info">
+                                <p><i class="fas fa-phone"></i> +880 1XXX-XXXXXX</p>
+                                <p><i class="fas fa-envelope"></i> appointments@sareeelegance.com</p>
+                                <p><i class="fas fa-clock"></i> Mon-Sat: 10AM-8PM</p>
+                                <p><i class="fas fa-map-marker-alt"></i> 123 Fashion Street, Dhaka</p>
+                            </div>
+                        </div>
+
+                        <div class="expert-card">
+                            <img src="assets/images/expert-stylist.jpg" alt="Expert Stylist">
+                            <h4>Meera Rahman</h4>
+                            <p>Senior Style Consultant</p>
+                            <div class="expert-experience">
+                                <span>15+ years experience</span>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>4.9/5 (127 reviews)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Available Slots -->
+                        <div class="available-slots">
+                            <h3>Available This Week</h3>
+                            <div class="slots-calendar" id="slots-calendar">
+                                <!-- Calendar will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonials -->
+            <section class="testimonials">
+                <div class="section-header">
+                    <h2 class="section-title">Client Testimonials</h2>
+                    <p class="section-subtitle">What our clients say about our consultation services</p>
+                </div>
+                
+                <div class="testimonials-slider">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"The bridal consultation was amazing! Meera helped me choose the perfect saree for my wedding. Her expertise and attention to detail made all the difference."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="assets/images/client-1.jpg" alt="Client">
+                            <div class="author-info">
+                                <h4>Fatima Ahmed</h4>
+                                <span>Bride, October 2023</span>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"Virtual draping session was incredible! I could see exactly how different sarees would look on me before making a purchase. Highly recommended!"</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="assets/images/client-2.jpg" alt="Client">
+                            <div class="author-info">
+                                <h4>Rashida Khan</h4>
+                                <span>Style Enthusiast</span>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"The custom design service exceeded my expectations. They created a unique saree that perfectly matched my vision. Professional and creative team!"</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="assets/images/client-3.jpg" alt="Client">
+                            <div class="author-info">
+                                <h4>Nazma Begum</h4>
+                                <span>Fashion Designer</span>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Saree Elegance</h3>
+                    <p>Premium sarees crafted with tradition and elegance. Your trusted partner for special occasions and everyday beauty.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="products.html">Collections</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="appointment.html">Book Consultation</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Customer Care</h4>
+                    <ul>
+                        <li><a href="size-guide.html">Size Guide</a></li>
+                        <li><a href="care-instructions.html">Care Instructions</a></li>
+                        <li><a href="returns.html">Returns & Exchange</a></li>
+                        <li><a href="shipping.html">Shipping Info</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Fashion Street, Dhaka, Bangladesh</p>
+                        <p><i class="fas fa-phone"></i> +880 1XXX-XXXXXX</p>
+                        <p><i class="fas fa-envelope"></i> info@sareeelegance.com</p>
+                        <p><i class="fas fa-clock"></i> Mon-Sat: 10AM-8PM</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 Saree Elegance. All rights reserved.</p>
+                    <div class="payment-methods">
+                        <img src="assets/images/payment-visa.png" alt="Visa">
+                        <img src="assets/images/payment-mastercard.png" alt="Mastercard">
+                        <img src="assets/images/payment-bkash.png" alt="bKash">
+                        <img src="assets/images/payment-nagad.png" alt="Nagad">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/appointment.js"></script>
+</body>
+</html>
