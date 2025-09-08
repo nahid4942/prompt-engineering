@@ -52,18 +52,30 @@ button {
     --light-color: #FAF8F5;           /* Light Cream */
     --text-color: #333333;
     --text-light: #666666;
+    --text-dark: #2C1810;             /* Dark text color */
+    --white: #FFFFFF;                 /* White color */
+    --bg-light: #F8F9FA;              /* Light background */
     --border-color: #E5E5E5;
     --success-color: #22C55E;
     --warning-color: #F59E0B;
     --error-color: #EF4444;
     --info-color: #3B82F6;
     
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #8B1538, #A91B47);
+    --gradient-gold: linear-gradient(135deg, #D4AF37, #F4D03F);
+    --gradient-accent: linear-gradient(135deg, #F5F5DC, #FFFFFF);
+    
     /* Spacing */
     --container-max-width: 1200px;
+    --container-width: 1200px;       /* Alternative container width */
     --section-padding: 80px 0;
     --border-radius: 8px;
     --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     --box-shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.15);
+    --shadow-light: 0 2px 10px rgba(0, 0, 0, 0.08);
+    --shadow-medium: 0 8px 25px rgba(0, 0, 0, 0.12);
+    --shadow-heavy: 0 12px 40px rgba(0, 0, 0, 0.2);
     
     /* Animations */
     --transition: all 0.3s ease;
@@ -94,7 +106,7 @@ button {
     align-items: center;
     justify-content: center;
     z-index: 9999;
-    transition: opacity 0.5s ease;
+    transition: opacity 0.3s ease, visibility 0s linear 0.3s;
 }
 
 .loading-content {
@@ -1535,8 +1547,10 @@ button {
 }
 
 .loading-hidden {
-    opacity: 0;
-    pointer-events: none;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    transition: opacity 0.3s ease, visibility 0s linear 0.3s;
 }
 
 .no-scroll {

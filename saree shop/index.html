@@ -29,6 +29,30 @@
         </div>
     </div>
 
+    <!-- Emergency Loading Screen Hide Script -->
+    <script>
+        // Emergency fallback to hide loading screen
+        setTimeout(function() {
+            const loadingScreen = document.getElementById('loading-screen');
+            if (loadingScreen) {
+                loadingScreen.style.opacity = '0';
+                loadingScreen.style.visibility = 'hidden';
+                loadingScreen.style.pointerEvents = 'none';
+                setTimeout(function() {
+                    loadingScreen.style.display = 'none';
+                }, 300);
+            }
+        }, 1000);
+        
+        // Hide on page load
+        window.addEventListener('load', function() {
+            const loadingScreen = document.getElementById('loading-screen');
+            if (loadingScreen) {
+                loadingScreen.classList.add('loading-hidden');
+            }
+        });
+    </script>
+
     <!-- Header -->
     <header class="header">
         <div class="top-bar">

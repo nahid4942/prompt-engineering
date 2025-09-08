@@ -1,0 +1,254 @@
+/* Advanced Book Consultation Styles for Saree Elegance */
+
+.appointment-main {
+  background: linear-gradient(135deg, #f8e1e7 0%, #fff 100%);
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+
+.appointment-booking {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.booking-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.booking-info-section {
+  background: rgba(139,21,56,0.03);
+  border-radius: 20px;
+  padding: 2rem;
+  height: fit-content;
+  position: sticky;
+  top: 2rem;
+}
+
+.booking-info-section h3 {
+  font-family: 'Playfair Display', serif;
+  color: #8B1538;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.info-list {
+  margin-bottom: 2rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: rgba(255,255,255,0.6);
+  border-radius: 12px;
+  border-left: 4px solid #D4AF37;
+}
+
+.info-item i {
+  color: #8B1538;
+  font-size: 1.2rem;
+  margin-top: 0.2rem;
+  min-width: 20px;
+}
+
+.info-item h4 {
+  color: #8B1538;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  font-size: 1rem;
+}
+
+.info-item p {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.contact-info {
+  background: rgba(212,175,55,0.1);
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.contact-info h4 {
+  font-family: 'Playfair Display', serif;
+  color: #8B1538;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.contact-info p {
+  color: #666;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.contact-info i {
+  color: #D4AF37;
+}
+
+.booking-form-section {
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 8px 32px rgba(139,21,56,0.10), 0 1.5px 8px rgba(212,175,55,0.08);
+  border-radius: 20px;
+  padding: 2rem;
+  height: auto;
+  min-height: 600px;
+  max-height: 800px;
+  overflow-y: auto;
+  position: relative;
+  z-index: 2;
+}
+
+.booking-form-section::before {
+  content: '';
+  position: absolute;
+  top: -2px; left: -2px; right: -2px; bottom: -2px;
+  background: linear-gradient(120deg, #d4af37 0%, #8B1538 100%);
+  border-radius: 22px;
+  z-index: -1;
+  opacity: 0.1;
+}
+
+.booking-form-section h2 {
+  font-family: 'Playfair Display', serif;
+  color: #8B1538;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.booking-form-section p {
+  color: #666;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+.appointment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.appointment-form label {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  color: #8B1538;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.5px;
+  font-size: 0.95rem;
+}
+
+.appointment-form input,
+.appointment-form select,
+.appointment-form textarea {
+  padding: 0.8rem 1rem;
+  border: 1.5px solid #e5c7d1;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  background: #fff;
+  color: #2C1810;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 4px rgba(139,21,56,0.04);
+}
+
+.appointment-form input:focus,
+.appointment-form select:focus,
+.appointment-form textarea:focus {
+  border-color: #8B1538;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(212,175,55,0.2);
+}
+
+.appointment-form textarea {
+  min-height: 80px;
+  resize: vertical;
+  grid-column: 1 / -1;
+}
+
+.appointment-form .btn {
+  background: linear-gradient(90deg, #8B1538 60%, #D4AF37 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  padding: 0.9rem 0;
+  margin-top: 1rem;
+  box-shadow: 0 2px 12px rgba(139,21,56,0.10);
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.appointment-form .btn:hover {
+  background: linear-gradient(90deg, #D4AF37 0%, #8B1538 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(139,21,56,0.15);
+}
+
+/* Success/Message Styling */
+.form-message {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #d4af37 0%, #fff 100%);
+  color: #8B1538;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .booking-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .booking-info-section {
+    position: static;
+  }
+  
+  .booking-form-section {
+    max-height: none;
+    overflow-y: visible;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+  
+  .appointment-form {
+    gap: 1rem;
+  }
+}
