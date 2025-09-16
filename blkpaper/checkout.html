@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - BlkPaper</title>
+    <meta name="description" content="Complete your order at BlkPaper - Black & White Fashion Store">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="checkout.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚫</text></svg>">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <!-- Logo -->
+                <div class="nav-logo">
+                    <a href="index.html">
+                        <div class="logo-icon">
+                            <div class="logo-circle"></div>
+                        </div>
+                        <span class="logo-text">BlkPaper</span>
+                    </a>
+                </div>
+
+                <!-- Checkout Progress -->
+                <div class="checkout-progress">
+                    <div class="progress-step active">
+                        <span class="step-number">1</span>
+                        <span class="step-title">Cart</span>
+                    </div>
+                    <div class="progress-line"></div>
+                    <div class="progress-step active">
+                        <span class="step-number">2</span>
+                        <span class="step-title">Checkout</span>
+                    </div>
+                    <div class="progress-line"></div>
+                    <div class="progress-step">
+                        <span class="step-number">3</span>
+                        <span class="step-title">Complete</span>
+                    </div>
+                </div>
+
+                <!-- Nav Actions -->
+                <div class="nav-actions">
+                    <a href="index.html" class="back-link">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>Back to Shop</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Checkout Content -->
+    <main class="checkout-main">
+        <div class="container">
+            <div class="checkout-container">
+                <!-- Checkout Form -->
+                <div class="checkout-form-section">
+                    <form id="checkoutForm" class="checkout-form">
+                        <!-- Customer Information -->
+                        <div class="form-section">
+                            <div class="section-header">
+                                <h2><i class="fas fa-user"></i> Customer Information</h2>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name *</label>
+                                    <input type="text" id="firstName" name="firstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name *</label>
+                                    <input type="text" id="lastName" name="lastName" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email Address *</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number *</label>
+                                    <input type="tel" id="phone" name="phone" required placeholder="+880 1XXX XXXXXX">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Shipping Address -->
+                        <div class="form-section">
+                            <div class="section-header">
+                                <h2><i class="fas fa-map-marker-alt"></i> Shipping Address</h2>
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Street Address *</label>
+                                <input type="text" id="address" name="address" required placeholder="House/Flat No, Street Name">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="city">City *</label>
+                                    <select id="city" name="city" required onchange="updateDeliveryFee()">
+                                        <option value="">Select City</option>
+                                        <option value="dhaka">Dhaka</option>
+                                        <option value="chittagong">Chittagong</option>
+                                        <option value="sylhet">Sylhet</option>
+                                        <option value="rajshahi">Rajshahi</option>
+                                        <option value="khulna">Khulna</option>
+                                        <option value="barisal">Barisal</option>
+                                        <option value="rangpur">Rangpur</option>
+                                        <option value="mymensingh">Mymensingh</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="area">Area/Thana *</label>
+                                    <input type="text" id="area" name="area" required placeholder="Area or Thana">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="postalCode">Postal Code</label>
+                                    <input type="text" id="postalCode" name="postalCode" placeholder="e.g., 1000">
+                                </div>
+                                <div class="form-group">
+                                    <label for="country">Country</label>
+                                    <select id="country" name="country">
+                                        <option value="bangladesh" selected>Bangladesh</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="addressType">Address Type</label>
+                                <div class="radio-group">
+                                    <label class="radio-option">
+                                        <input type="radio" name="addressType" value="home" checked>
+                                        <span class="radio-custom"></span>
+                                        <i class="fas fa-home"></i> Home
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="addressType" value="office">
+                                        <span class="radio-custom"></span>
+                                        <i class="fas fa-building"></i> Office
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="addressType" value="other">
+                                        <span class="radio-custom"></span>
+                                        <i class="fas fa-map-pin"></i> Other
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Delivery Options -->
+                        <div class="form-section">
+                            <div class="section-header">
+                                <h2><i class="fas fa-shipping-fast"></i> Delivery Options</h2>
+                            </div>
+                            <div class="delivery-options">
+                                <label class="delivery-option">
+                                    <input type="radio" name="deliveryMethod" value="standard" checked onchange="updateDeliveryFee()">
+                                    <div class="delivery-card">
+                                        <div class="delivery-info">
+                                            <h4>Standard Delivery</h4>
+                                            <p>3-5 business days</p>
+                                        </div>
+                                        <div class="delivery-price">
+                                            <span id="standardPrice">৳60</span>
+                                        </div>
+                                    </div>
+                                </label>
+                                <label class="delivery-option">
+                                    <input type="radio" name="deliveryMethod" value="express" onchange="updateDeliveryFee()">
+                                    <div class="delivery-card">
+                                        <div class="delivery-info">
+                                            <h4>Express Delivery</h4>
+                                            <p>1-2 business days</p>
+                                        </div>
+                                        <div class="delivery-price">
+                                            <span id="expressPrice">৳120</span>
+                                        </div>
+                                    </div>
+                                </label>
+                                <label class="delivery-option">
+                                    <input type="radio" name="deliveryMethod" value="overnight" onchange="updateDeliveryFee()">
+                                    <div class="delivery-card">
+                                        <div class="delivery-info">
+                                            <h4>Overnight Delivery</h4>
+                                            <p>Next day (Dhaka only)</p>
+                                        </div>
+                                        <div class="delivery-price">
+                                            <span id="overnightPrice">৳200</span>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Payment Methods -->
+                        <div class="form-section">
+                            <div class="section-header">
+                                <h2><i class="fas fa-credit-card"></i> Payment Method</h2>
+                            </div>
+                            <div class="payment-methods">
+                                <!-- Cash on Delivery -->
+                                <label class="payment-method">
+                                    <input type="radio" name="paymentMethod" value="cod" checked onchange="togglePaymentDetails()">
+                                    <div class="payment-card">
+                                        <div class="payment-icon">
+                                            <i class="fas fa-money-bill-wave"></i>
+                                        </div>
+                                        <div class="payment-info">
+                                            <h4>Cash on Delivery</h4>
+                                            <p>Pay when you receive your order</p>
+                                        </div>
+                                    </div>
+                                </label>
+
+                                <!-- Mobile Banking -->
+                                <label class="payment-method">
+                                    <input type="radio" name="paymentMethod" value="mobile" onchange="togglePaymentDetails()">
+                                    <div class="payment-card">
+                                        <div class="payment-icon">
+                                            <i class="fas fa-mobile-alt"></i>
+                                        </div>
+                                        <div class="payment-info">
+                                            <h4>Mobile Banking</h4>
+                                            <p>bKash, Nagad, Rocket, Upay</p>
+                                        </div>
+                                    </div>
+                                </label>
+
+                                <!-- Bank Transfer -->
+                                <label class="payment-method">
+                                    <input type="radio" name="paymentMethod" value="bank" onchange="togglePaymentDetails()">
+                                    <div class="payment-card">
+                                        <div class="payment-icon">
+                                            <i class="fas fa-university"></i>
+                                        </div>
+                                        <div class="payment-info">
+                                            <h4>Bank Transfer</h4>
+                                            <p>Direct bank account transfer</p>
+                                        </div>
+                                    </div>
+                                </label>
+
+                                <!-- Card Payment -->
+                                <label class="payment-method">
+                                    <input type="radio" name="paymentMethod" value="card" onchange="togglePaymentDetails()">
+                                    <div class="payment-card">
+                                        <div class="payment-icon">
+                                            <i class="fas fa-credit-card"></i>
+                                        </div>
+                                        <div class="payment-info">
+                                            <h4>Credit/Debit Card</h4>
+                                            <p>Visa, Mastercard, American Express</p>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <!-- Payment Details -->
+                            <div id="paymentDetails" class="payment-details">
+                                <!-- Mobile Banking Details -->
+                                <div id="mobilePaymentDetails" class="payment-detail-section" style="display: none;">
+                                    <h4>Mobile Banking Details</h4>
+                                    <div class="mobile-banking-options">
+                                        <label class="mobile-option">
+                                            <input type="radio" name="mobileProvider" value="bkash">
+                                            <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 40'><rect width='100' height='40' fill='%23e2136e'/><text x='50' y='25' text-anchor='middle' fill='white' font-size='12'>bKash</text></svg>" alt="bKash">
+                                        </label>
+                                        <label class="mobile-option">
+                                            <input type="radio" name="mobileProvider" value="nagad">
+                                            <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 40'><rect width='100' height='40' fill='%23ed1c24'/><text x='50' y='25' text-anchor='middle' fill='white' font-size='12'>Nagad</text></svg>" alt="Nagad">
+                                        </label>
+                                        <label class="mobile-option">
+                                            <input type="radio" name="mobileProvider" value="rocket">
+                                            <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 40'><rect width='100' height='40' fill='%238e44ad'/><text x='50' y='25' text-anchor='middle' fill='white' font-size='12'>Rocket</text></svg>" alt="Rocket">
+                                        </label>
+                                        <label class="mobile-option">
+                                            <input type="radio" name="mobileProvider" value="upay">
+                                            <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 40'><rect width='100' height='40' fill='%2300a651'/><text x='50' y='25' text-anchor='middle' fill='white' font-size='12'>Upay</text></svg>" alt="Upay">
+                                        </label>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="mobileNumber">Mobile Number</label>
+                                        <input type="tel" id="mobileNumber" name="mobileNumber" placeholder="01XXXXXXXXX">
+                                    </div>
+                                </div>
+
+                                <!-- Bank Transfer Details -->
+                                <div id="bankPaymentDetails" class="payment-detail-section" style="display: none;">
+                                    <h4>Bank Transfer Information</h4>
+                                    <div class="bank-info">
+                                        <p><strong>Account Name:</strong> BlkPaper Fashion Ltd.</p>
+                                        <p><strong>Bank:</strong> Dutch Bangla Bank Ltd.</p>
+                                        <p><strong>Account Number:</strong> 123-456-789012</p>
+                                        <p><strong>Routing Number:</strong> 090260232</p>
+                                        <p><strong>Branch:</strong> Dhanmondi, Dhaka</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="transactionId">Transaction ID</label>
+                                        <input type="text" id="transactionId" name="transactionId" placeholder="Enter transaction ID after transfer">
+                                    </div>
+                                </div>
+
+                                <!-- Card Payment Details -->
+                                <div id="cardPaymentDetails" class="payment-detail-section" style="display: none;">
+                                    <h4>Card Information</h4>
+                                    <div class="form-group">
+                                        <label for="cardNumber">Card Number</label>
+                                        <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19">
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="expiryDate">Expiry Date</label>
+                                            <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" maxlength="5">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="cvv">CVV</label>
+                                            <input type="text" id="cvv" name="cvv" placeholder="123" maxlength="4">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cardName">Name on Card</label>
+                                        <input type="text" id="cardName" name="cardName" placeholder="John Doe">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Order Notes -->
+                        <div class="form-section">
+                            <div class="section-header">
+                                <h2><i class="fas fa-sticky-note"></i> Order Notes</h2>
+                            </div>
+                            <div class="form-group">
+                                <label for="orderNotes">Special Instructions (Optional)</label>
+                                <textarea id="orderNotes" name="orderNotes" rows="4" placeholder="Any special delivery instructions or notes about your order..."></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Terms and Conditions -->
+                        <div class="form-section">
+                            <div class="terms-section">
+                                <label class="checkbox-option">
+                                    <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+                                    <span class="checkbox-custom"></span>
+                                    I agree to the <a href="#" onclick="openTermsModal()">Terms and Conditions</a> and <a href="#" onclick="openPrivacyModal()">Privacy Policy</a>
+                                </label>
+                                <label class="checkbox-option">
+                                    <input type="checkbox" id="subscribeNewsletter" name="subscribeNewsletter">
+                                    <span class="checkbox-custom"></span>
+                                    Subscribe to our newsletter for exclusive offers and updates
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="order-summary-section">
+                    <div class="order-summary">
+                        <div class="summary-header">
+                            <h3>Order Summary</h3>
+                        </div>
+                        
+                        <div id="orderItems" class="order-items">
+                            <!-- Dynamic content will be loaded here -->
+                        </div>
+
+                        <div class="summary-calculations">
+                            <div class="calculation-row">
+                                <span>Subtotal:</span>
+                                <span id="subtotal">৳0</span>
+                            </div>
+                            <div class="calculation-row">
+                                <span>Delivery Fee:</span>
+                                <span id="deliveryFee">৳60</span>
+                            </div>
+                            <div class="calculation-row discount-row" id="discountRow" style="display: none;">
+                                <span>Discount:</span>
+                                <span id="discount">-৳0</span>
+                            </div>
+                            <div class="calculation-row total-row">
+                                <span>Total:</span>
+                                <span id="total">৳0</span>
+                            </div>
+                        </div>
+
+                        <div class="promo-code">
+                            <div class="promo-input">
+                                <input type="text" id="promoCode" placeholder="Enter promo code">
+                                <button type="button" onclick="applyPromoCode()">Apply</button>
+                            </div>
+                        </div>
+
+                        <div class="checkout-actions">
+                            <button type="button" class="btn btn-outline" onclick="goBackToCart()">
+                                <i class="fas fa-arrow-left"></i> Back to Cart
+                            </button>
+                            <button type="submit" form="checkoutForm" class="btn btn-primary" id="placeOrderBtn">
+                                <i class="fas fa-lock"></i> Place Order
+                            </button>
+                        </div>
+
+                        <div class="security-badges">
+                            <div class="security-badge">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Secure Checkout</span>
+                            </div>
+                            <div class="security-badge">
+                                <i class="fas fa-undo"></i>
+                                <span>30-Day Returns</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Terms Modal -->
+    <div class="modal-overlay" id="termsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Terms and Conditions</h3>
+                <button class="modal-close" onclick="closeModal('termsModal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h4>1. Acceptance of Terms</h4>
+                <p>By using BlkPaper's services, you agree to these terms and conditions.</p>
+                
+                <h4>2. Product Information</h4>
+                <p>We strive to provide accurate product descriptions and images. Colors may vary slightly due to monitor settings.</p>
+                
+                <h4>3. Ordering and Payment</h4>
+                <p>All orders are subject to acceptance and availability. Prices are subject to change without notice.</p>
+                
+                <h4>4. Delivery</h4>
+                <p>Delivery times are estimates and may vary. We are not responsible for delays beyond our control.</p>
+                
+                <h4>5. Returns and Exchanges</h4>
+                <p>Items can be returned within 30 days of delivery in original condition with tags attached.</p>
+                
+                <h4>6. Privacy</h4>
+                <p>We respect your privacy and protect your personal information as outlined in our Privacy Policy.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy Modal -->
+    <div class="modal-overlay" id="privacyModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Privacy Policy</h3>
+                <button class="modal-close" onclick="closeModal('privacyModal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h4>Information We Collect</h4>
+                <p>We collect information you provide directly, such as when you create an account, make a purchase, or contact us.</p>
+                
+                <h4>How We Use Your Information</h4>
+                <p>We use your information to process orders, provide customer service, and improve our services.</p>
+                
+                <h4>Information Sharing</h4>
+                <p>We do not sell, trade, or rent your personal information to third parties.</p>
+                
+                <h4>Data Security</h4>
+                <p>We implement appropriate security measures to protect your personal information.</p>
+                
+                <h4>Contact Us</h4>
+                <p>If you have questions about this Privacy Policy, please contact us at info@blkpaper.com</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <p>Processing your order...</p>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <div class="toast-content">
+            <i class="toast-icon"></i>
+            <span class="toast-message"></span>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="checkout.js"></script>
+</body>
+</html>
