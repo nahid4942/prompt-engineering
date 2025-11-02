@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popular Tourism and Trade - Discover Bangladesh's Natural Beauty & Rich Heritage</title>
+    <meta name="description" content="Popular Tourism and Trade: Explore Bangladesh's stunning landscapes, from the mystical Sundarbans to Cox's Bazar beach. Experience rich culture, wildlife, and heritage with our expert-guided tours.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇧🇩</text></svg>">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <i class="fas fa-globe-asia"></i>
+                <h2>Popular Tourism & Trade</h2>
+            </div>
+            <div class="loading-spinner"></div>
+            <p>Preparing your journey to unexplored beauty...</p>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <!-- Logo -->
+                <div class="nav-logo">
+                    <a href="#home">
+                        <i class="fas fa-globe-asia"></i>
+                        <span class="logo-text">Popular Tourism & Trade</span>
+                    </a>
+                </div>
+
+                <!-- Navigation Menu -->
+                <ul class="nav-menu" id="navMenu">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#destinations" class="nav-link">Destinations</a>
+                        <div class="dropdown-menu">
+                            <a href="#sundarbans">Sundarbans</a>
+                            <a href="#coxs-bazar">Cox's Bazar</a>
+                            <a href="#sylhet">Sylhet</a>
+                            <a href="#chittagong">Chittagong Hills</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#experiences" class="nav-link">Experiences</a>
+                        <div class="dropdown-menu">
+                            <a href="#culture">Culture & Heritage</a>
+                            <a href="#adventure">Adventure Tours</a>
+                            <a href="#wildlife">Wildlife & Nature</a>
+                            <a href="#photography">Photography</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#packages" class="nav-link">Tour Packages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+
+                <!-- Action Buttons -->
+                <div class="nav-actions">
+                    <button class="language-toggle" onclick="toggleLanguage()">
+                        <i class="fas fa-language"></i>
+                        <span id="langText">EN</span>
+                    </button>
+                    <a href="#book-now" class="btn btn-primary">Book Now</a>
+                    <button class="hamburger" onclick="toggleMobileMenu()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-slider">
+            <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');">
+                <div class="hero-overlay"></div>
+                <div class="container">
+                    <div class="hero-content" data-aos="fade-up">
+                        <h1 class="hero-title">
+                            <span class="text-highlight">Popular Tourism & Trade</span>
+                            <span>Discover Bangladesh's Beauty</span>
+                        </h1>
+                        <p class="hero-subtitle">
+                            With Popular Tourism and Trade, experience vibrant cultures, natural wonders, and rich heritage in the world's largest Ganges-Brahmaputra delta. 
+                            From the Sundarbans to the longest sea beach, Bangladesh welcomes you with warmth and endless possibilities.
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="#destinations" class="btn btn-primary btn-large">
+                                <i class="fas fa-map-marked-alt"></i>
+                                Explore Destinations
+                            </a>
+                            <a href="#packages" class="btn btn-outline btn-large">
+                                <i class="fas fa-calendar-alt"></i>
+                                View Packages
+                            </a>
+                        </div>
+                        <div class="hero-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">50+</div>
+                                <div class="stat-label">Destinations</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">10K+</div>
+                                <div class="stat-label">Happy Travelers</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">15+</div>
+                                <div class="stat-label">Years Experience</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1544735716-392fe2489ffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');">
+                <div class="hero-overlay"></div>
+                <div class="container">
+                    <div class="hero-content" data-aos="fade-up">
+                        <h1 class="hero-title">
+                            <span class="text-highlight">Sundarbans</span>
+                            <span>World's Largest Mangrove Forest</span>
+                        </h1>
+                        <p class="hero-subtitle">
+                            Journey into the mystical Sundarbans, home to the Royal Bengal Tiger and countless species of wildlife. 
+                            Experience the magic of floating through ancient waterways in this UNESCO World Heritage site.
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="#sundarbans-tours" class="btn btn-primary btn-large">
+                                <i class="fas fa-ship"></i>
+                                Sundarbans Tours
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1571115764595-644a1f56a55c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');">
+                <div class="hero-overlay"></div>
+                <div class="container">
+                    <div class="hero-content" data-aos="fade-up">
+                        <h1 class="hero-title">
+                            <span class="text-highlight">Cox's Bazar</span>
+                            <span>World's Longest Natural Sea Beach</span>
+                        </h1>
+                        <p class="hero-subtitle">
+                            Walk along 120 kilometers of unbroken sandy coastline, experience vibrant sunsets, and enjoy water sports 
+                            at the world's longest natural sea beach stretching into the horizon.
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="#beach-tours" class="btn btn-primary btn-large">
+                                <i class="fas fa-umbrella-beach"></i>
+                                Beach Adventures
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Hero Navigation -->
+        <div class="hero-nav">
+            <button class="hero-nav-btn active" onclick="changeSlide(0)"></button>
+            <button class="hero-nav-btn" onclick="changeSlide(1)"></button>
+            <button class="hero-nav-btn" onclick="changeSlide(2)"></button>
+        </div>
+        
+        <!-- Scroll Down Indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-text">Scroll to Explore</div>
+            <div class="scroll-arrow">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Search Bar -->
+    <section class="quick-search">
+        <div class="container">
+            <div class="search-card" data-aos="fade-up">
+                <h3>Plan Your Perfect Journey</h3>
+                <form class="search-form" id="tourSearchForm">
+                    <div class="form-group">
+                        <label for="destination">Destination</label>
+                        <select id="destination" required>
+                            <option value="">Choose Destination</option>
+                            <option value="sundarbans">Sundarbans</option>
+                            <option value="coxs-bazar">Cox's Bazar</option>
+                            <option value="sylhet">Sylhet</option>
+                            <option value="chittagong-hills">Chittagong Hills</option>
+                            <option value="dhaka">Dhaka Heritage</option>
+                            <option value="rajshahi">Rajshahi</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="duration">Duration</label>
+                        <select id="duration" required>
+                            <option value="">Select Duration</option>
+                            <option value="1-day">1 Day</option>
+                            <option value="2-3-days">2-3 Days</option>
+                            <option value="4-7-days">4-7 Days</option>
+                            <option value="1-week-plus">1 Week+</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="travelers">Travelers</label>
+                        <select id="travelers" required>
+                            <option value="">Number of Travelers</option>
+                            <option value="1">1 Person</option>
+                            <option value="2">2 People</option>
+                            <option value="3-5">3-5 People</option>
+                            <option value="6-plus">6+ People</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="budget">Budget Range</label>
+                        <select id="budget" required>
+                            <option value="">Select Budget</option>
+                            <option value="budget">Budget (৳5,000-15,000)</option>
+                            <option value="standard">Standard (৳15,000-30,000)</option>
+                            <option value="premium">Premium (৳30,000+)</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-search"></i>
+                        Find Tours
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Destinations -->
+    <section class="destinations" id="destinations">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Iconic Destinations</h2>
+                <p>Explore Bangladesh's most breathtaking locations, each offering unique experiences and unforgettable memories</p>
+            </div>
+            
+            <div class="destinations-grid">
+                <div class="destination-card large" data-aos="fade-up" data-aos-delay="100">
+                    <div class="destination-image">
+                        <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sundarbans Mangrove Forest">
+                        <div class="destination-overlay"></div>
+                        <div class="destination-badge">UNESCO World Heritage</div>
+                    </div>
+                    <div class="destination-content">
+                        <h3>Sundarbans Mangrove Forest</h3>
+                        <p>The world's largest mangrove forest, home to the Royal Bengal Tiger and a UNESCO World Heritage site.</p>
+                        <div class="destination-features">
+                            <span class="feature-tag"><i class="fas fa-ship"></i> Boat Safari</span>
+                            <span class="feature-tag"><i class="fas fa-camera"></i> Wildlife Photography</span>
+                            <span class="feature-tag"><i class="fas fa-tree"></i> Nature Trails</span>
+                        </div>
+                        <div class="destination-footer">
+                            <div class="price">From ৳8,500</div>
+                            <a href="#sundarbans-details" class="btn btn-outline">Explore</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="destination-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="destination-image">
+                        <img src="https://images.unsplash.com/photo-1571115764595-644a1f56a55c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Cox's Bazar Beach">
+                        <div class="destination-overlay"></div>
+                        <div class="destination-badge">World's Longest</div>
+                    </div>
+                    <div class="destination-content">
+                        <h3>Cox's Bazar</h3>
+                        <p>120km of unbroken sandy coastline with stunning sunsets and water sports.</p>
+                        <div class="destination-features">
+                            <span class="feature-tag"><i class="fas fa-umbrella-beach"></i> Beach</span>
+                            <span class="feature-tag"><i class="fas fa-surfing"></i> Water Sports</span>
+                        </div>
+                        <div class="destination-footer">
+                            <div class="price">From ৳6,000</div>
+                            <a href="#beach-details" class="btn btn-outline">Explore</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="destination-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="destination-image">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Sylhet Tea Gardens">
+                        <div class="destination-overlay"></div>
+                        <div class="destination-badge">Tea Capital</div>
+                    </div>
+                    <div class="destination-content">
+                        <h3>Sylhet Tea Gardens</h3>
+                        <p>Rolling hills covered in emerald tea plantations and pristine natural beauty.</p>
+                        <div class="destination-features">
+                            <span class="feature-tag"><i class="fas fa-leaf"></i> Tea Tours</span>
+                            <span class="feature-tag"><i class="fas fa-mountain"></i> Hills</span>
+                        </div>
+                        <div class="destination-footer">
+                            <div class="price">From ৳7,200</div>
+                            <a href="#tea-details" class="btn btn-outline">Explore</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="destination-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="destination-image">
+                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Chittagong Hill Tracts">
+                        <div class="destination-overlay"></div>
+                        <div class="destination-badge">Adventure Hub</div>
+                    </div>
+                    <div class="destination-content">
+                        <h3>Chittagong Hill Tracts</h3>
+                        <p>Mystical hills, tribal culture, and adventure activities in pristine landscapes.</p>
+                        <div class="destination-features">
+                            <span class="feature-tag"><i class="fas fa-hiking"></i> Hiking</span>
+                            <span class="feature-tag"><i class="fas fa-users"></i> Tribal Culture</span>
+                        </div>
+                        <div class="destination-footer">
+                            <div class="price">From ৳9,800</div>
+                            <a href="#hills-details" class="btn btn-outline">Explore</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Unique Experiences -->
+    <section class="experiences" id="experiences">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Unique Bangladesh Experiences</h2>
+                <p>Immerse yourself in authentic adventures that showcase the true spirit of Bangladesh</p>
+            </div>
+            
+            <div class="experiences-grid">
+                <div class="experience-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="experience-icon">
+                        <i class="fas fa-ship"></i>
+                    </div>
+                    <h3>Heritage Paddle Steamer</h3>
+                    <p>Journey on historic paddle steamers through the mighty rivers, experiencing colonial-era elegance and scenic waterways.</p>
+                    <a href="#steamer-tours" class="experience-link">Discover More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="experience-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="experience-icon">
+                        <i class="fas fa-fish"></i>
+                    </div>
+                    <h3>Otter Fishing Adventures</h3>
+                    <p>Witness the ancient art of otter fishing, a unique tradition where fishermen work alongside trained otters.</p>
+                    <a href="#otter-fishing" class="experience-link">Discover More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="experience-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="experience-icon">
+                        <i class="fas fa-bicycle"></i>
+                    </div>
+                    <h3>Cycling Through Villages</h3>
+                    <p>Cycle through picturesque rural villages, rice paddies, and countryside landscapes to experience local life.</p>
+                    <a href="#cycling-tours" class="experience-link">Discover More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="experience-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="experience-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3>Floating Markets</h3>
+                    <p>Explore vibrant floating markets where traders sell fresh produce from boats in scenic waterways.</p>
+                    <a href="#floating-markets" class="experience-link">Discover More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="experience-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="experience-icon">
+                        <i class="fas fa-drum"></i>
+                    </div>
+                    <h3>Cultural Festivals</h3>
+                    <p>Join vibrant festivals celebrating Bangladesh's rich cultural heritage with music, dance, and traditional foods.</p>
+                    <a href="#cultural-tours" class="experience-link">Discover More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="experience-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="experience-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h3>Photography Expeditions</h3>
+                    <p>Capture Bangladesh's stunning landscapes, wildlife, and cultural moments with expert photography guides.</p>
+                    <a href="#photo-tours" class="experience-link">Discover More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tour Packages -->
+    <section class="packages" id="packages">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Curated Tour Packages</h2>
+                <p>Carefully crafted journeys that showcase the best of Bangladesh's natural beauty and cultural richness</p>
+            </div>
+            
+            <div class="packages-grid">
+                <div class="package-card featured" data-aos="fade-up" data-aos-delay="100">
+                    <div class="package-badge">Most Popular</div>
+                    <div class="package-image">
+                        <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Complete Bangladesh Tour">
+                    </div>
+                    <div class="package-content">
+                        <h3>Complete Bangladesh Discovery</h3>
+                        <p class="package-duration">
+                            <i class="fas fa-calendar-alt"></i>
+                            12 Days / 11 Nights
+                        </p>
+                        <p class="package-description">
+                            Experience the complete essence of Bangladesh from Sundarbans to Cox's Bazar, including cultural sites, natural wonders, and authentic local experiences.
+                        </p>
+                        <div class="package-highlights">
+                            <div class="highlight-item">
+                                <i class="fas fa-check"></i>
+                                Sundarbans Safari & Tiger Spotting
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check"></i>
+                                Cox's Bazar Beach Resort Stay
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check"></i>
+                                Sylhet Tea Garden Tours
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check"></i>
+                                Cultural Heritage Sites
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check"></i>
+                                Traditional River Cruises
+                            </div>
+                        </div>
+                        <div class="package-footer">
+                            <div class="package-price">
+                                <span class="price-from">From</span>
+                                <span class="price-amount">৳45,000</span>
+                                <span class="price-per">per person</span>
+                            </div>
+                            <a href="#book-complete-tour" class="btn btn-primary">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="package-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="package-image">
+                        <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Sundarbans Adventure">
+                    </div>
+                    <div class="package-content">
+                        <h3>Sundarbans Wildlife Safari</h3>
+                        <p class="package-duration">
+                            <i class="fas fa-calendar-alt"></i>
+                            3 Days / 2 Nights
+                        </p>
+                        <p class="package-description">
+                            Immerse yourself in the world's largest mangrove forest with boat safaris, wildlife spotting, and authentic village experiences.
+                        </p>
+                        <div class="package-highlights">
+                            <div class="highlight-item">
+                                <i class="fas fa-check"></i>
+                                Royal Bengal Tiger Tracking
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check"></i>
+                                Bird Watching Tours
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check"></i>
+                                Traditional Boat Stay
+                            </div>
+                        </div>
+                        <div class="package-footer">
+                            <div class="package-price">
+                                <span class="price-from">From</span>
+                                <span class="price-amount">৳12,500</span>
+                                <span class="price-per">per person</span>
+                            </div>
+                            <a href="#book-sundarbans" class="btn btn-outline">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="package-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="package-image">
+                        <img src="https://images.unsplash.com/photo-1571115764595-644a1f56a55c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Beach Paradise">
+                    </div>
+                    <div class="package-content">
+                        <h3>Cox's Bazar Beach Paradise</h3>
+                        <p class="package-duration">
+                            <i class="fas fa-calendar-alt"></i>
+                            4 Days / 3 Nights
+                        </p>
+                        <p class="package-description">
+                            Relax on the world's longest natural sea beach with water sports, sunset views, and beachside luxury accommodations.
+                        </p>
+                        <div class="package-highlights">
+                            <div class="highlight-item">
+                                <i class="fas fa-check"></i>
+                                Beachfront Resort Stay
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check"></i>
+                                Water Sports Activities
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check"></i>
+                                Sunset Cruise
+                            </div>
+                        </div>
+                        <div class="package-footer">
+                            <div class="package-price">
+                                <span class="price-from">From</span>
+                                <span class="price-amount">৳18,000</span>
+                                <span class="price-per">per person</span>
+                            </div>
+                            <a href="#book-beach" class="btn btn-outline">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="package-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="package-image">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Hill Tracts Adventure">
+                    </div>
+                    <div class="package-content">
+                        <h3>Hill Tracts & Tea Gardens</h3>
+                        <p class="package-duration">
+                            <i class="fas fa-calendar-alt"></i>
+                            5 Days / 4 Nights
+                        </p>
+                        <p class="package-description">
+                            Explore the green hills of Sylhet and Chittagong with tea plantation tours, tribal culture experiences, and scenic hikes.
+                        </p>
+                        <div class="package-highlights">
+                            <div class="highlight-item">
+                                <i class="fas fa-check"></i>
+                                Tea Factory Visits
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check"></i>
+                                Tribal Village Tours
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-check"></i>
+                                Nature Hiking Trails
+                            </div>
+                        </div>
+                        <div class="package-footer">
+                            <div class="package-price">
+                                <span class="price-from">From</span>
+                                <span class="price-amount">৳22,500</span>
+                                <span class="price-per">per person</span>
+                            </div>
+                            <a href="#book-hills" class="btn btn-outline">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Why Choose Us for Your Bangladesh Journey</h2>
+                <p>We are your trusted partner in discovering the authentic beauty and culture of Bangladesh</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>15+ Years Experience</h3>
+                    <p>Pioneering sustainable tourism in Bangladesh with deep local knowledge and expertise.</p>
+                </div>
+                
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Expert Local Guides</h3>
+                    <p>Passionate guides who share authentic stories and hidden gems of Bangladesh's culture and nature.</p>
+                </div>
+                
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Sustainable Tourism</h3>
+                    <p>Committed to responsible travel that preserves Bangladesh's natural beauty and supports local communities.</p>
+                </div>
+                
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Safety First</h3>
+                    <p>Comprehensive safety measures and emergency support ensuring worry-free exploration.</p>
+                </div>
+                
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="500">
+                    <div class="feature-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Personalized Service</h3>
+                    <p>Customized itineraries and personal attention to create your perfect Bangladesh adventure.</p>
+                </div>
+                
+                <div class="feature-item" data-aos="fade-up" data-aos-delay="600">
+                    <div class="feature-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Round-the-clock assistance and support throughout your journey in Bangladesh.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>What Our Travelers Say</h2>
+                <p>Hear from adventurers who have experienced the magic of Bangladesh with us</p>
+            </div>
+            
+            <div class="testimonials-slider" data-aos="fade-up">
+                <div class="testimonial-card active">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p>"Bangladesh exceeded all expectations! The Sundarbans safari was absolutely magical - seeing a Royal Bengal Tiger in its natural habitat was a dream come true. Our guide was incredibly knowledgeable and passionate about conservation."</p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4>Sarah Johnson</h4>
+                                <span>Wildlife Photographer, UK</span>
+                            </div>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p>"The warmth and hospitality of the Bangladeshi people made our journey unforgettable. From the tea gardens of Sylhet to the beaches of Cox's Bazar, every moment was filled with wonder and authentic cultural experiences."</p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4>Marco Rodriguez</h4>
+                                <span>Travel Blogger, Spain</span>
+                            </div>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p>"As a solo female traveler, I felt completely safe and welcomed throughout Bangladesh. The cycling tours through rural villages gave me authentic insights into local life that I'll treasure forever."</p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4>Yuki Tanaka</h4>
+                                <span>Adventure Traveler, Japan</span>
+                            </div>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-nav">
+                <button class="testimonial-nav-btn active" onclick="changeTestimonial(0)"></button>
+                <button class="testimonial-nav-btn" onclick="changeTestimonial(1)"></button>
+                <button class="testimonial-nav-btn" onclick="changeTestimonial(2)"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Booking -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right">
+                    <h2>Let Popular Tourism & Trade Plan Your Perfect Bangladesh Adventure</h2>
+                    <p>Ready to explore the hidden gems of Bangladesh? Our experienced travel experts at Popular Tourism and Trade are here to create unforgettable experiences tailored just for you.</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="method-info">
+                                <h4>Phone</h4>
+                                <p>+880-1700-000000</p>
+                                <p>+880-2-9876543</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="method-info">
+                                <h4>Email</h4>
+                                <p>info@discoverbangladesh.com</p>
+                                <p>booking@discoverbangladesh.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="method-info">
+                                <h4>Office</h4>
+                                <p>123 Gulshan Avenue</p>
+                                <p>Dhaka 1212, Bangladesh</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-tripadvisor"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container" data-aos="fade-left">
+                    <form class="contact-form" id="contactForm">
+                        <h3>Get in Touch</h3>
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" placeholder="Your Phone">
+                        </div>
+                        <div class="form-group">
+                            <select id="interest" required>
+                                <option value="">Tour Interest</option>
+                                <option value="complete-bangladesh">Complete Bangladesh Tour</option>
+                                <option value="sundarbans">Sundarbans Safari</option>
+                                <option value="coxs-bazar">Cox's Bazar Beach</option>
+                                <option value="cultural">Cultural Heritage</option>
+                                <option value="adventure">Adventure Tours</option>
+                                <option value="custom">Custom Package</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" placeholder="Tell us about your travel plans..." rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-large">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-globe-asia"></i>
+                        <span>Popular Tourism & Trade</span>
+                    </div>
+                    <p>Your trusted partner for exploring the natural wonders and cultural treasures of Bangladesh. Popular Tourism and Trade creates authentic experiences that connect you with the heart and soul of this beautiful country.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tripadvisor"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Destinations</h4>
+                    <ul>
+                        <li><a href="#sundarbans">Sundarbans</a></li>
+                        <li><a href="#coxs-bazar">Cox's Bazar</a></li>
+                        <li><a href="#sylhet">Sylhet</a></li>
+                        <li><a href="#chittagong">Chittagong Hills</a></li>
+                        <li><a href="#dhaka">Dhaka Heritage</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Experiences</h4>
+                    <ul>
+                        <li><a href="#wildlife">Wildlife Safari</a></li>
+                        <li><a href="#cultural">Cultural Tours</a></li>
+                        <li><a href="#adventure">Adventure Activities</a></li>
+                        <li><a href="#photography">Photography Tours</a></li>
+                        <li><a href="#heritage">Heritage Sites</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Travel Info</h4>
+                    <ul>
+                        <li><a href="#visa">Visa Information</a></li>
+                        <li><a href="#best-time">Best Time to Visit</a></li>
+                        <li><a href="#packing">Packing Tips</a></li>
+                        <li><a href="#safety">Safety Guidelines</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 Popular Tourism and Trade. All rights reserved. | Crafted with ❤️ for sustainable tourism</p>
+                    <div class="footer-links">
+                        <a href="#privacy">Privacy Policy</a>
+                        <a href="#terms">Terms of Service</a>
+                        <a href="#sustainability">Sustainability</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Book Your Bangladesh Adventure</h3>
+                <button class="modal-close" onclick="closeBookingModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="bookingModalBody">
+                <!-- Booking form will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Float Button -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/8801700000000" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

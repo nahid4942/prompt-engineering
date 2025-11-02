@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BusFinder - Smart Bus Route & Booking System</title>
+    <meta name="description" content="Find the best bus routes, compare fares, and book tickets across Bangladesh. Real-time tracking and comprehensive route information.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Leaflet Map CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚌</text></svg>">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <i class="fas fa-bus"></i>
+                <h2>BusFinder</h2>
+            </div>
+            <div class="loading-spinner"></div>
+            <p>Finding the best routes for you...</p>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <!-- Logo -->
+                <div class="nav-logo">
+                    <a href="#home">
+                        <i class="fas fa-bus logo-icon"></i>
+                        <span class="logo-text">BusFinder</span>
+                    </a>
+                </div>
+
+                <!-- Navigation Menu -->
+                <ul class="nav-menu" id="navMenu">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#routes" class="nav-link">Routes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#operators" class="nav-link">Operators</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#booking" class="nav-link">My Bookings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">Support</a>
+                    </li>
+                </ul>
+
+                <!-- Action Buttons -->
+                <div class="nav-actions">
+                    <button class="language-toggle" onclick="toggleLanguage()">
+                        <i class="fas fa-globe"></i>
+                        <span id="langText">EN</span>
+                    </button>
+                    <button class="user-menu" onclick="toggleUserMenu()">
+                        <i class="fas fa-user"></i>
+                    </button>
+                    <button class="hamburger" onclick="toggleMobileMenu()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Search -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="text-highlight">Find Your Perfect</span>
+                    <span>Bus Journey</span>
+                </h1>
+                <p class="hero-subtitle">Search, Compare, and Book bus tickets across Bangladesh with real-time information and best prices</p>
+                
+                <!-- Main Search Form -->
+                <div class="search-card">
+                    <div class="search-header">
+                        <div class="trip-type">
+                            <input type="radio" id="oneWay" name="tripType" value="one-way" checked>
+                            <label for="oneWay">One Way</label>
+                            <input type="radio" id="roundTrip" name="tripType" value="round-trip">
+                            <label for="roundTrip">Round Trip</label>
+                        </div>
+                    </div>
+                    
+                    <form class="search-form" id="busSearchForm">
+                        <div class="form-row">
+                            <div class="form-group from-to">
+                                <div class="input-group">
+                                    <label for="fromLocation">From</label>
+                                    <div class="location-input">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <input type="text" id="fromLocation" placeholder="Departure city" autocomplete="off">
+                                        <div class="location-suggestions" id="fromSuggestions"></div>
+                                    </div>
+                                </div>
+                                
+                                <button type="button" class="swap-locations" onclick="swapLocations()">
+                                    <i class="fas fa-exchange-alt"></i>
+                                </button>
+                                
+                                <div class="input-group">
+                                    <label for="toLocation">To</label>
+                                    <div class="location-input">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <input type="text" id="toLocation" placeholder="Destination city" autocomplete="off">
+                                        <div class="location-suggestions" id="toSuggestions"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label for="departureDate">Departure Date</label>
+                                <div class="date-input">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <input type="date" id="departureDate" required>
+                                </div>
+                            </div>
+                            
+                            <div class="input-group return-date" id="returnDateGroup" style="display: none;">
+                                <label for="returnDate">Return Date</label>
+                                <div class="date-input">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <input type="date" id="returnDate">
+                                </div>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="passengers">Passengers</label>
+                                <div class="passenger-selector">
+                                    <i class="fas fa-users"></i>
+                                    <select id="passengers">
+                                        <option value="1">1 Passenger</option>
+                                        <option value="2">2 Passengers</option>
+                                        <option value="3">3 Passengers</option>
+                                        <option value="4">4 Passengers</option>
+                                        <option value="5+">5+ Passengers</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="search-btn">
+                            <i class="fas fa-search"></i>
+                            <span>Search Buses</span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Quick Filter Chips -->
+                <div class="quick-filters">
+                    <h3>Popular Filters:</h3>
+                    <div class="filter-chips">
+                        <button class="filter-chip" data-filter="ac">
+                            <i class="fas fa-snowflake"></i>
+                            AC Buses
+                        </button>
+                        <button class="filter-chip" data-filter="luxury">
+                            <i class="fas fa-crown"></i>
+                            Luxury
+                        </button>
+                        <button class="filter-chip" data-filter="overnight">
+                            <i class="fas fa-moon"></i>
+                            Night Journey
+                        </button>
+                        <button class="filter-chip" data-filter="direct">
+                            <i class="fas fa-route"></i>
+                            Direct Routes
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Results Section -->
+    <section class="search-results" id="searchResults" style="display: none;">
+        <div class="container">
+            <div class="results-header">
+                <div class="results-info">
+                    <h2 id="resultsTitle">Available Buses</h2>
+                    <p id="resultsCount">Found 0 buses for your journey</p>
+                </div>
+                
+                <div class="results-actions">
+                    <button class="view-toggle active" data-view="list">
+                        <i class="fas fa-list"></i>
+                        List
+                    </button>
+                    <button class="view-toggle" data-view="map">
+                        <i class="fas fa-map"></i>
+                        Map
+                    </button>
+                    <button class="filter-toggle" onclick="toggleFilters()">
+                        <i class="fas fa-filter"></i>
+                        Filters
+                    </button>
+                </div>
+            </div>
+
+            <div class="results-content">
+                <!-- Advanced Filters Sidebar -->
+                <div class="filters-sidebar" id="filtersSidebar">
+                    <div class="filters-header">
+                        <h3>Filter Results</h3>
+                        <button class="clear-filters" onclick="clearAllFilters()">Clear All</button>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <h4>Bus Class</h4>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" name="busClass" value="ac">
+                                <span class="checkmark"></span>
+                                AC Buses
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="busClass" value="non-ac">
+                                <span class="checkmark"></span>
+                                Non-AC Buses
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="busClass" value="luxury">
+                                <span class="checkmark"></span>
+                                Luxury/Executive
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="busClass" value="standard">
+                                <span class="checkmark"></span>
+                                Standard/Economy
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <h4>Departure Time</h4>
+                        <div class="time-filters">
+                            <label class="time-slot">
+                                <input type="checkbox" name="departureTime" value="morning">
+                                <span>Morning (6AM - 12PM)</span>
+                            </label>
+                            <label class="time-slot">
+                                <input type="checkbox" name="departureTime" value="afternoon">
+                                <span>Afternoon (12PM - 6PM)</span>
+                            </label>
+                            <label class="time-slot">
+                                <input type="checkbox" name="departureTime" value="evening">
+                                <span>Evening (6PM - 10PM)</span>
+                            </label>
+                            <label class="time-slot">
+                                <input type="checkbox" name="departureTime" value="night">
+                                <span>Night (10PM - 6AM)</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <h4>Price Range</h4>
+                        <div class="price-range">
+                            <input type="range" id="priceRange" min="0" max="5000" step="100" value="2500">
+                            <div class="price-labels">
+                                <span>৳0</span>
+                                <span id="maxPrice">৳2500</span>
+                                <span>৳5000+</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <h4>Bus Operators</h4>
+                        <div class="operator-search">
+                            <input type="text" placeholder="Search operators..." id="operatorSearch">
+                        </div>
+                        <div class="filter-options" id="operatorFilters">
+                            <label class="filter-option">
+                                <input type="checkbox" name="operator" value="green-line">
+                                <span class="checkmark"></span>
+                                Green Line
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="operator" value="shohagh">
+                                <span class="checkmark"></span>
+                                Shohagh Paribahan
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="operator" value="hanif">
+                                <span class="checkmark"></span>
+                                Hanif Enterprise
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="operator" value="ena">
+                                <span class="checkmark"></span>
+                                Ena Transport
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bus Results List -->
+                <div class="results-main">
+                    <div class="results-list" id="resultsList">
+                        <!-- Bus cards will be populated here -->
+                    </div>
+                    
+                    <!-- Map View -->
+                    <div class="map-container" id="mapContainer" style="display: none;">
+                        <div id="busRouteMap"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Routes Section -->
+    <section class="popular-routes" id="routes">
+        <div class="container">
+            <div class="section-header">
+                <h2>Popular Routes</h2>
+                <p>Most searched bus routes across Bangladesh</p>
+            </div>
+            
+            <div class="routes-grid" id="popularRoutes">
+                <!-- Popular route cards will be populated here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Bus Operators Section -->
+    <section class="operators-section" id="operators">
+        <div class="container">
+            <div class="section-header">
+                <h2>Trusted Bus Operators</h2>
+                <p>Travel with confidence on verified and reliable bus services</p>
+            </div>
+            
+            <div class="operators-grid" id="operatorsGrid">
+                <!-- Operator cards will be populated here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose BusFinder?</h2>
+                <p>Your trusted companion for bus travel across Bangladesh</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-search-location"></i>
+                    </div>
+                    <h3>Smart Route Search</h3>
+                    <p>Find the best routes with real-time information and alternative suggestions</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3>Best Price Guarantee</h3>
+                    <p>Compare fares across operators and get the best deals on your journey</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Real-time Tracking</h3>
+                    <p>Track your bus location and get updates on delays or schedule changes</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Easy Booking</h3>
+                    <p>Book tickets instantly with secure payment and e-ticket generation</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Verified Reviews</h3>
+                    <p>Read genuine passenger reviews and ratings for informed decisions</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Get help anytime with our dedicated customer support team</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-bus"></i>
+                        <span>BusFinder</span>
+                    </div>
+                    <p>Making bus travel easier and more convenient across Bangladesh. Find, compare, and book your perfect journey.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#routes">Popular Routes</a></li>
+                        <li><a href="#operators">Bus Operators</a></li>
+                        <li><a href="#booking">My Bookings</a></li>
+                        <li><a href="#support">Customer Support</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Bus Booking</a></li>
+                        <li><a href="#">Route Planning</a></li>
+                        <li><a href="#">Real-time Tracking</a></li>
+                        <li><a href="#">Mobile App</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 BusFinder. All rights reserved. | Made for easy bus travel in Bangladesh</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Book Your Seat</h3>
+                <button class="modal-close" onclick="closeBookingModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="bookingModalBody">
+                <!-- Booking details will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

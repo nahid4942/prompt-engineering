@@ -61,6 +61,11 @@ body {
   line-height: 1.6;
   color: var(--dark-gray);
   background-color: var(--primary-white);
+  background-image: url('back.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   overflow-x: hidden;
 }
 
@@ -191,6 +196,37 @@ input, textarea, select {
   }
 }
 
+/* ===== CONTENT OVERLAY FOR BACKGROUND ===== */
+.main-content {
+  position: relative;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.content-section {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: var(--border-radius);
+  margin: 20px 0;
+  padding: 40px 0;
+}
+
+/* Ensure sections have good contrast */
+section:not(.hero):not(.footer) {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  margin: 10px 0;
+  border-radius: var(--border-radius);
+}
+
+section:not(.hero):not(.footer) .container {
+  position: relative;
+  z-index: 1;
+}
+
 /* ===== LOADING SCREEN ===== */
 .loading-screen {
   position: fixed;
@@ -225,6 +261,14 @@ input, textarea, select {
   height: 60px;
   border-radius: 50%;
   background: var(--primary-white);
+  margin: 0 auto 20px;
+  animation: pulse 2s infinite;
+}
+
+.logo-image {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
   margin: 0 auto 20px;
   animation: pulse 2s infinite;
 }
@@ -294,6 +338,14 @@ input, textarea, select {
   height: 40px;
   background: var(--gradient-primary);
   border-radius: 50%;
+}
+
+.logo-icon .logo-image {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  animation: none;
+  margin: 0;
 }
 
 .logo-text {
@@ -557,7 +609,7 @@ input, textarea, select {
 }
 
 .hero-bg-2 {
-  background: linear-gradient(135deg, #333333 0%, #000000 100%);
+  background: url(back.jpeg)
 }
 
 .hero-content {
@@ -1231,6 +1283,14 @@ input, textarea, select {
   margin-bottom: 20px;
 }
 
+.footer-logo .logo-image {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  animation: none;
+  margin: 0;
+}
+
 .footer-section h4 {
   font-size: 1.1rem;
   font-weight: 600;
@@ -1686,6 +1746,29 @@ input, textarea, select {
   .cart-sidebar,
   .wishlist-sidebar {
     width: 100vw;
+  }
+
+  /* Logo responsive adjustments */
+  .logo-icon .logo-image,
+  .footer-logo .logo-image {
+    width: 32px;
+    height: 32px;
+  }
+
+  .logo-image {
+    width: 48px;
+    height: 48px;
+  }
+
+  /* Background adjustments for mobile */
+  body {
+    background-attachment: scroll;
+    background-size: cover;
+  }
+
+  section:not(.hero):not(.footer) {
+    background: rgba(255, 255, 255, 0.98);
+    margin: 5px 0;
   }
 }
 
