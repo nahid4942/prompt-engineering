@@ -9,7 +9,7 @@
     <meta property="og:title" content="BLKPAPER - Redefine Your Style">
     <meta property="og:description" content="Modern fashion and lifestyle brand offering exclusive clothing, accessories, and the revolutionary Memory Band">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="logo.png">
+    <meta property="og:image" content="102.png">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,15 +23,15 @@
     <link rel="stylesheet" href="styles.css">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="logo.png">
-    <link rel="apple-touch-icon" href="logo.png">
+    <link rel="icon" type="image/png" href="102.png">
+    <link rel="apple-touch-icon" href="102.png">
 </head>
 <body>
     <!-- Loading Screen -->
     <div id="loadingScreen" class="loading-screen">
         <div class="loading-content">
-            <div class="loading-logo">
-                <img src="logo.png" alt="BLKPAPER Logo" class="logo-image">
+                <div class="loading-logo">
+                <img src="102.png" alt="BLKPAPER Logo" class="logo-image">
                 <h2>BLKPAPER</h2>
             </div>
             <div class="loading-bar">
@@ -47,8 +47,7 @@
             <!-- Logo -->
             <div class="nav-logo">
                 <a href="#home">
-                    <img src="logo.png" alt="BLKPAPER Logo" class="logo-image">
-                    
+                    <img src="102.png" alt="BLKPAPER Logo" class="logo-image">
                 </a>
             </div>
 
@@ -430,7 +429,7 @@
         <div class="footer-content">
             <div class="footer-section">
                 <div class="footer-logo">
-                    <img src="logo.png" alt="BLKPAPER Logo" class="logo-image">
+                    <img src="102.png" alt="BLKPAPER Logo" class="logo-image">
                     <span>BLKPAPER</span>
                 </div>
                 <p>Redefine your style. Capture every memory. Modern fashion and lifestyle brand from Bangladesh.</p>
@@ -590,7 +589,26 @@
     
     <!-- Test Suite (Development Only) -->
     <script src="test-suite.js"></script>
-</body>
-</html>
+        <script>
+            // Ensure 102.png is used where possible. Try a few candidate locations and replace logo/image links if found.
+            (async function ensure102Logo(){
+                const candidates = ['102.png','../blkpaper/102.png','../blkpaperpos/102.png'];
+                let found = null;
+                for(const c of candidates){
+                    try{
+                        const r = await fetch(c, {method:'HEAD'});
+                        if(r && (r.ok || r.status===0)){ found = c; break; }
+                    }catch(e){}
+                }
+                if(!found) return; // nothing to do
+                // replace img.logo-image src
+                document.querySelectorAll('img.logo-image').forEach(img=>{ img.src = found; });
+                // replace favicon links
+                document.querySelectorAll('link[rel~="icon"]').forEach(l=>{ l.href = found; });
+                document.querySelectorAll('link[rel~="apple-touch-icon"]').forEach(l=>{ l.href = found; });
+                // replace og:image meta
+                const og = document.querySelector('meta[property="og:image"]'); if(og) og.content = found;
+            })();
+        </script>
 </body>
 </html>
